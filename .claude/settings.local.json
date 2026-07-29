@@ -18,7 +18,9 @@
       "Bash(sips -s format jpeg -s formatOptions 82 placeholders/placeholder1.jpg --out images/hero.jpg)",
       "Bash(sips -s format jpeg -s formatOptions 82 placeholders/placeholder2.jpg --out images/story.jpg)",
       "Bash(command -v cwebp magick convert)",
-      "Bash(python3 -c \"import PIL; print\\('PIL', PIL.__version__\\)\")"
+      "Bash(python3 -c \"import PIL; print\\('PIL', PIL.__version__\\)\")",
+      "Bash(git mv *)",
+      "Bash(git commit -q -m 'Rename main page to index.html so the site serves at the root URL *)"
     ]
   }
 }

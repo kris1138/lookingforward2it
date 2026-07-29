@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 extract.py \"/Users/kris/.claude/projects/-Users-kris-Documents-Projects-Looking-Forward-Website/1dd60274-ebee-4a22-876b-e195e3a10efd/tool-results/toolu_01AEFvNJv3sPUTWrnfjmXnRQ.txt\" \"/Users/kris/Documents/Projects/Looking Forward/Website/image-slot.js\")",
+      "Bash(python3 extract.py \"/Users/kris/.claude/projects/-Users-kris-Documents-Projects-Looking-Forward-Website/1dd60274-ebee-4a22-876b-e195e3a10efd/tool-results/toolu_01V1b33KrPJGt6VyMruzoMdt.txt\" \"/Users/kris/Documents/Projects/Looking Forward/Website/support.js\")",
+      "Bash(python3 extract.py \"/Users/kris/.claude/projects/-Users-kris-Documents-Projects-Looking-Forward-Website/1dd60274-ebee-4a22-876b-e195e3a10efd/tool-results/toolu_01XvwwKvizZ5YNEYuQKjfKoV.txt\" \"/Users/kris/Documents/Projects/Looking Forward/Website/_ds/looking-forward-design-system-844b43bc-a4a0-4ebe-839e-cdb1568511c1/_ds_bundle.js\")",
+      "Bash(cd \"/Users/kris/Documents/Projects/Looking Forward/Website\" && rm -f .claude/launch.json .claude/serve.py && echo \"--- final tree ---\" && find . -type f -not -path './.claude/*' | sort && echo && ls -la .claude/)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Import Looking Forward from Claude Design *)"
+    ]
+  }
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/looking-forward-design-system-844b43bc-a4a0-4ebe-839e-cdb1568511c1/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/looking-forward-design-system-844b43bc-a4a0-4ebe-839e-cdb1568511c1/tokens/colors.css">
+<link rel="stylesheet" href="_ds/looking-forward-design-system-844b43bc-a4a0-4ebe-839e-cdb1568511c1/tokens/typography.css">
+<link rel="stylesheet" href="_ds/looking-forward-design-system-844b43bc-a4a0-4ebe-839e-cdb1568511c1/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/looking-forward-design-system-844b43bc-a4a0-4ebe-839e-cdb1568511c1/styles.css">
+<script src="_ds/looking-forward-design-system-844b43bc-a4a0-4ebe-839e-cdb1568511c1/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--muro); color: var(--ombra); font-family: var(--font-body); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  img, iframe { max-width: 100%; }
+  a { color: var(--ombra); text-decoration: underline; text-decoration-color: var(--grano); text-decoration-thickness: 1px; text-underline-offset: 4px; transition: color 300ms cubic-bezier(0.25,0.6,0.3,1), text-decoration-color 300ms cubic-bezier(0.25,0.6,0.3,1); }
+  a:hover { color: var(--terra); text-decoration-color: var(--terra); }
+  ::selection { background: rgba(212,162,87,0.35); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</helmet>
+
+<div style="background: var(--muro); min-height: 100vh;">
+
+  <header style="position: sticky; top: 0; z-index: 40; background: var(--muro); border-bottom: 1px solid var(--muro-scuro);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: clamp(11px, 2.2vw, 18px) clamp(18px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px;">
+      <a href="#top" style="text-decoration: none; font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: clamp(20px, 4.4vw, 25px); line-height: 1; color: var(--ombra);">Looking&nbsp;Forward<span style="color: var(--terra);">&nbsp;·</span></a>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px clamp(14px, 2.8vw, 34px);">
+        <a href="#story" style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none;">{{ t.navStory }}</a>
+        <a href="#films" style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none;">{{ t.navFilms }}</a>
+        <a href="#contact" style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none;">{{ t.navContact }}</a>
+        <div style="display: flex; align-items: center; gap: 8px; padding-left: 8px; border-left: 1px solid var(--muro-scuro);">
+          <button onClick="{{ setEn }}" style="border: none; background: none; cursor: pointer; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 2px; transition: color 300ms cubic-bezier(0.25,0.6,0.3,1); color: {{ enColor }};">EN</button>
+          <span style="color: var(--muro-scuro);">/</span>
+          <button onClick="{{ setIt }}" style="border: none; background: none; cursor: pointer; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 2px; transition: color 300ms cubic-bezier(0.25,0.6,0.3,1); color: {{ itColor }};">IT</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" data-reveal style="max-width: 1180px; margin: 0 auto; padding: clamp(44px, 7vw, 88px) clamp(20px, 4vw, 48px) 0; display: flex; flex-wrap: wrap; gap: clamp(36px, 5vw, 72px); align-items: end;">
+    <div style="flex: 1.06 1 400px; min-width: 0; padding-bottom: 24px;">
+      <x-import component-from-global-scope="LookingForwardDesignSystem_844b43.Eyebrow" hint-size="auto,16px">{{ t.heroEyebrow }}</x-import>
+      <h1 style="font-family: var(--font-display); font-weight: 600; font-size: clamp(38px, 6.4vw, 68px); line-height: 1.04; letter-spacing: -0.01em; color: var(--ombra-scura); margin: 18px 0 22px;">{{ t.heroTitleA }}<br><em style="font-weight: 500;">{{ t.heroTitleEm }}</em>{{ t.heroTitleB }}</h1>
+      <p style="font-size: clamp(17px, 1.6vw, 19px); line-height: 1.65; color: var(--ombra); max-width: 30em; margin: 0 0 34px;">{{ t.heroLead }}</p>
+      <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+        <x-import component-from-global-scope="LookingForwardDesignSystem_844b43.Button" as="a" href="https://www.youtube.com/@lookingforward2it?sub_confirmation=1" target="_blank" rel="noopener" variant="primary" size="lg" hint-size="auto,52px">{{ t.ctaSubscribe }}</x-import>
+        <x-import component-from-global-scope="LookingForwardDesignSystem_844b43.Button" as="a" href="#films" variant="secondary" size="lg" hint-size="auto,52px">{{ t.ctaWatch }}</x-import>
+      </div>
+      <p style="font-size: 14px; color: var(--pietra); margin: 22px 0 0;">{{ t.heroNote }}</p>
+    </div>
+    <div style="flex: 0.84 1 300px; min-width: 0; border-radius: 999px 999px 0 0; overflow: hidden; height: clamp(320px, 46vw, 520px); background: var(--muro-scuro);">
+      <image-slot id="lf-hero" shape="rect" placeholder="Drop the farmhouse at golden hour"></image-slot>
+    </div>
+  </section>
+
+  <div data-reveal style="display: flex; justify-content: center; color: var(--terra); font-size: 20px; line-height: 1; padding: clamp(48px, 7vw, 72px) 0;">·</div>
+
+  <section data-reveal style="max-width: 760px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); text-align: center;">
+    <x-import component-from-global-scope="LookingForwardDesignSystem_844b43.Eyebrow" hint-size="auto,16px">{{ t.introEyebrow }}</x-import>
+    <p style="font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(23px, 3.6vw, 31px); line-height: 1.38; color: var(--ombra-scura); margin: 16px 0 0;">{{ t.introPull }}</p>
+  </section>
+
+  <section data-reveal style="max-width: 1180px; margin: clamp(56px, 8vw, 88px) auto 0; padding: 0 clamp(20px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: clamp(30px, 4vw, 56px);">
+    <sc-for list="{{ t.cols }}" as="col" hint-placeholder-count="3">
+      <div style="border-top: 1px solid var(--muro-scuro); padding-top: 20px;">
+        <h3 style="font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 23px; color: var(--ombra-scura); margin: 0 0 10px;">{{ col.title }}</h3>
+        <p style="font-size: 16px; line-height: 1.7; color: var(--ombra); margin: 0; text-wrap: pretty;">{{ col.body }}</p>
+      </div>
+    </sc-for>
+  </section>
+
+  <section id="story" data-reveal style="max-width: 1180px; margin: clamp(76px, 11vw, 128px) auto 0; padding: 0 clamp(20px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: clamp(40px, 6vw, 80px); align-items: flex-start;">
+    <div data-story-media style="flex: 0.72 1 280px; min-width: 0; position: sticky; top: 110px;">
+      <div style="border-radius: 8px; overflow: hidden; height: clamp(300px, 40vw, 460px); background: var(--muro-scuro);">
+        <image-slot id="lf-story" shape="rect" placeholder="Drop a photo of the work"></image-slot>
+      </div>
+      <p style="font-size: 13px; color: var(--pietra); margin: 12px 0 0;">{{ t.storyCaption }}</p>
+    </div>
+    <div style="flex: 1 1 380px; min-width: 0;">
+      <x-import component-from-global-scope="LookingForwardDesignSystem_844b43.Eyebrow" hint-size="auto,16px">{{ t.storyEyebrow }}</x-import>
+      <h2 style="font-family: var(--font-display); font-weight: 600; font-size: clamp(29px, 4.6vw, 44px); line-height: 1.12; color: var(--ombra-scura); margin: 14px 0 28px; max-width: 15em;">{{ t.storyTitle }}</h2>
+      <sc-for list="{{ t.story }}" as="para" hint-placeholder-count="3">
+        <p style="font-size: clamp(16.5px, 1.6vw, 18px); line-height: 1.7; color: var(--ombra); margin: 0 0 22px; max-width: 34em; text-wrap: pretty;">{{ para }}</p>
+      </sc-for>
+      <div style="margin-top: 46px; border-top: 1px solid var(--muro-scuro); padding-top: 26px;">
+        <x-import component-from-global-scope="LookingForwardDesignSystem_844b43.Eyebrow" hint-size="auto,16px">{{ t.nowEyebrow }}</x-import>
+        <div style="display: grid; gap: 18px; margin-top: 18px;">
+          <sc-for list="{{ t.now }}" as="row" hint-placeholder-count="3">
+            <div style="display: grid; grid-template-columns: clamp(96px, 22vw, 150px) minmax(0, 1fr); gap: 8px 20px; align-items: baseline;">
+              <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--terra);">{{ row.when }}</div>
+              <div style="font-size: clamp(16px, 1.5vw, 17px); line-height: 1.6; color: var(--ombra);">{{ row.what }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="films" data-reveal style="margin: 128px 0 0; background: var(--muro-chiaro); border-top: 1px solid var(--muro-scuro); border-bottom: 1px solid var(--muro-scuro); padding: clamp(64px, 9vw, 96px) 0;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px);">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 40px; margin-bottom: 40px;">
+        <div style="flex: 1 1 320px; min-width: 0;">
+          <x-import component-from-global-scope="LookingForwardDesignSystem_844b43.Eyebrow" hint-size="auto,16px">{{ t.filmsEyebrow }}</x-import>
+          <h2 style="font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 4.2vw, 40px); line-height: 1.12; color: var(--ombra-scura); margin: 12px 0 12px;">{{ t.filmsTitle }}</h2>
+          <p style="font-size: clamp(16px, 1.5vw, 17px); line-height: 1.65; color: var(--ombra); margin: 0; max-width: 40em;">{{ t.filmsLead }}</p>
+        </div>
+        <x-import component-from-global-scope="LookingForwardDesignSystem_844b43.Button" as="a" href="https://www.youtube.com/@lookingforward2it?sub_confirmation=1" target="_blank" rel="noopener" variant="secondary" hint-size="auto,46px">{{ t.ctaSubscribe }}</x-import>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: clamp(28px, 3.5vw, 40px); align-items: flex-start;">
+        <div style="flex: 1.55 1 420px; min-width: 0;">
+          <div style="position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: var(--ombra-scura); box-shadow: 0 2px 12px rgba(125,79,53,0.08);">
+            <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}">
+              <iframe src="{{ embedSrc }}" title="Looking Forward film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: none;"></iframe>
+            </sc-if>
+            <sc-if value="{{ idle }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ play }}" aria-label="Play" style="position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: none; background: none; cursor: pointer; display: block;" style-hover="opacity: 1;">
+                <img src="{{ activeThumb }}" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 400ms cubic-bezier(0.25,0.6,0.3,1);">
+                <span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(90,56,38,0.55), rgba(90,56,38,0.05) 55%);"></span>
+                <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 84px; height: 84px; border-radius: 999px; background: rgba(242,232,214,0.92); display: flex; align-items: center; justify-content: center; transition: transform 300ms cubic-bezier(0.25,0.6,0.3,1), background 300ms cubic-bezier(0.25,0.6,0.3,1);" style-hover="transform: translate(-50%, -50%) scale(1.07); background: var(--terra);">
+                  <span style="width: 0; height: 0; border-left: 20px solid var(--ombra-scura); border-top: 13px solid transparent; border-bottom: 13px solid transparent; margin-left: 6px;"></span>
+                </span>
+              </button>
+            </sc-if>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin-top: 20px;">
+            <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--terra); white-space: nowrap;">{{ activeLabel }}</div>
+            <h3 style="font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: clamp(21px, 2.6vw, 26px); color: var(--ombra-scura); margin: 0;">{{ activeTitle }}</h3>
+          </div>
+        </div>
+
+        <div style="flex: 0.9 1 280px; min-width: 0;">
+          <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--pietra); margin-bottom: 14px;">{{ t.filmsListLabel }}</div>
+          <div style="display: grid; gap: 6px; max-height: min(460px, 70vh); overflow-y: auto; padding-right: 4px;">
+            <sc-for list="{{ videos }}" as="v" hint-placeholder-count="5">
+              <button onClick="{{ v.select }}" style="text-align: left; border: none; cursor: pointer; font-family: var(--font-body); display: grid; grid-template-columns: clamp(84px, 26vw, 104px) minmax(0, 1fr); gap: 14px; align-items: center; padding: 10px; border-radius: 8px; transition: background 300ms cubic-bezier(0.25,0.6,0.3,1), transform 300ms cubic-bezier(0.25,0.6,0.3,1); background: {{ v.bg }};" style-hover="background: var(--muro-scuro); transform: translateX(2px);">
+                <span style="display: block; aspect-ratio: 16 / 9; border-radius: 5px; overflow: hidden; background: var(--muro-scuro);">
+                  <img src="{{ v.thumb }}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </span>
+                <span style="display: block; min-width: 0;">
+                  <span style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: {{ v.labelColor }}; margin-bottom: 3px;">{{ v.label }}</span>
+                  <span style="display: block; font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 18px; line-height: 1.25; color: var(--ombra-scura);">{{ v.title }}</span>
+                </span>
+              </button>
+            </sc-for>
+          </div>
+          <p style="font-size: 13px; line-height: 1.6; color: var(--pietra); margin: 18px 0 0;">{{ t.filmsFoot }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-reveal style="background: var(--ombra-scura); color: var(--muro);">
+    <div style="max-width: 1180px; margin: 0 auto; padding: clamp(66px, 9vw, 104px) clamp(20px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: clamp(44px, 6vw, 80px); align-items: flex-start;">
+      <div style="flex: 1 1 340px; min-width: 0;">
+        <x-import component-from-global-scope="LookingForwardDesignSystem_844b43.Eyebrow" color="var(--grano)" hint-size="auto,16px">{{ t.contactEyebrow }}</x-import>
+        <h2 style="font-family: var(--font-display); font-weight: 600; font-size: clamp(29px, 4.6vw, 44px); line-height: 1.1; color: var(--muro); margin: 14px 0 20px; max-width: 12em;">{{ t.contactTitle }}</h2>
+        <p style="font-size: clamp(16.5px, 1.6vw, 18px); line-height: 1.7; color: rgba(242,232,214,0.82); margin: 0 0 32px; max-width: 32em; text-wrap: pretty;">{{ t.contactLead }}</p>
+        <a href="https://www.youtube.com/@lookingforward2it?sub_confirmation=1" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; background: var(--terra); color: var(--muro-chiaro); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; padding: 17px 36px; border-radius: 6px; transition: background 300ms cubic-bezier(0.25,0.6,0.3,1), transform 300ms cubic-bezier(0.25,0.6,0.3,1);" style-hover="background: var(--grano); transform: translateY(-1px);">{{ t.ctaSubscribe }}</a>
+      </div>
+      <div style="flex: 0.9 1 260px; min-width: 0; display: grid; gap: 30px; padding-top: 8px; overflow-wrap: anywhere;">
+        <div>
+          <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grano); margin-bottom: 8px;">{{ t.labelWhere }}</div>
+          <p style="margin: 0; font-size: 16px; line-height: 1.7; color: rgba(242,232,214,0.88);">Sessame, Asti<br>Monferrato, Piedmont, Italy</p>
+          <p style="margin: 6px 0 0; font-size: 13px; color: rgba(242,232,214,0.5);">{{ t.addressNote }}</p>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grano); margin-bottom: 8px;">{{ t.labelWatch }}</div>
+          <a href="https://www.youtube.com/@lookingforward2it" target="_blank" rel="noopener" style="font-size: 16px; color: var(--muro); text-decoration-color: rgba(212,162,87,0.6);">youtube.com/@lookingforward2it</a>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grano); margin-bottom: 8px;">{{ t.labelFollow }}</div>
+          <a href="https://www.instagram.com/lookingforward2.it" target="_blank" rel="noopener" style="font-size: 16px; color: var(--muro); text-decoration-color: rgba(212,162,87,0.6);">instagram.com/lookingforward2.it</a>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--grano); margin-bottom: 8px;">{{ t.labelWrite }}</div>
+          <a href="mailto:hello@lookingforward2.it" style="font-size: 16px; color: var(--muro); text-decoration-color: rgba(212,162,87,0.6);">hello@lookingforward2.it</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(242,232,214,0.15);">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 22px clamp(20px, 4vw, 48px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 12px; color: rgba(242,232,214,0.55);">
+        <span>© 2026 Looking Forward · lookingforward2.it</span>
+        <span style="font-family: var(--font-display); font-style: italic; font-size: 15px; color: rgba(242,232,214,0.7);">{{ t.footNote }}</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;language&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;it&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;'en' | 'it'&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  /* ─────────────────────────────────────────────────────────────
+     ADD NEW YOUTUBE FILMS HERE.
+     Copy a line, paste the video's ID (the part after youtu.be/ or
+     watch?v=), give it a label and a title. Newest first.
+     ───────────────────────────────────────────────────────────── */
+  films = [
+    { id: 'o38vIfndPUQ', label: 'Film 05', title: 'Plaster, dust and a well' },
+    { id: 'tN3nnnHJOCw', label: 'Film 04', title: 'First beds in the garden' },
+    { id: 'o1i6UoJMAcY', label: 'Film 03', title: 'A roof, at last' },
+    { id: 'WJJAkamgfF0', label: 'Film 02', title: 'Clearing the hillside' },
+    { id: 'kQo-WP_Yllo', label: 'Film 01', title: 'The farmhouse, before anything' },
+  ];
+
+  state = { lang: null, active: 0, playing: false };
+
+  copy = {
+    en: {
+      navStory: 'The story', navFilms: 'Films', navContact: 'Contact',
+      heroEyebrow: 'Sessame, Asti · Piedmont',
+      heroTitleA: 'A house being rebuilt,', heroTitleEm: 'slowly', heroTitleB: ' and by hand.',
+      heroLead: "We left Scotland for an old farmhouse in the Monferrato hills. It's becoming a B&B, a writers' retreat and a small produce farm. It isn't finished, and there's no date yet — you can watch it happen.",
+      ctaSubscribe: 'Subscribe on YouTube', ctaWatch: 'Watch the films',
+      heroNote: 'A new film every few weeks.',
+      introEyebrow: 'What this is',
+      introPull: 'Not a hotel. Not a brand. A house in the hills that we are putting back together, one room and one season at a time.',
+      cols: [
+        { title: 'The house', body: 'Four rooms, thick stone walls and a roof that took a whole winter. It will be a B&B when it is ready to be one, and not before.' },
+        { title: 'The garden', body: 'Vegetables, fruit trees and a great deal of learning. Most of what we cook will start about thirty metres from the kitchen door.' },
+        { title: 'The retreat', body: 'Quiet rooms and a long table for people who need somewhere to write. Slow mornings, long afternoons, nobody expecting anything of you.' },
+      ],
+      storyEyebrow: 'The story',
+      storyTitle: "We bought a house we had never slept in.",
+      story: [
+        'We came to Monferrato to look at one house and left having agreed to buy another — a farmhouse in Sessame with a collapsed outbuilding, a well, and a hillside that had been left to itself for a decade.',
+        'The first year was mostly removal: plaster off, floors up, brambles out. We learned which builders turn up and which ones do not. We learned the Italian for lime mortar. We slept in the one dry room through a winter and cooked on a camping ring for longer than we would like to admit.',
+        'It is not finished. It may never be finished. That turns out to be the point.',
+      ],
+      storyCaption: 'The west range, before the roof went back on.',
+      nowEyebrow: 'Where we are now',
+      now: [
+        { when: 'Spring 2026', what: 'Roof finished on the west range; the first beds planted out.' },
+        { when: 'Summer 2026', what: 'Replastering the ground floor, and the well back in use.' },
+        { when: 'Next', what: 'Two guest rooms, then a kitchen worth cooking in.' },
+      ],
+      filmsEyebrow: 'The films', filmsTitle: 'Watch it happen',
+      filmsLead: 'Every few weeks we put up a film of what we have actually done — the good weeks and the ones that went sideways.',
+      filmsListLabel: 'All films',
+      filmsFoot: 'New films are added to the top of this list as we make them.',
+      contactEyebrow: 'Say hello', contactTitle: 'Come and find us, eventually.',
+      contactLead: 'We are not taking bookings yet. If you would like to know when we are, the films are the best place to follow along — or write to us and we will remember.',
+      labelWhere: 'Where', labelWatch: 'Watch', labelFollow: 'Follow', labelWrite: 'Write',
+      addressNote: 'Full address to follow.',
+      footNote: 'Looking forward, and looking back.',
+    },
+    it: {
+      navStory: 'La storia', navFilms: 'Video', navContact: 'Contatti',
+      heroEyebrow: 'Sessame, Asti · Piemonte',
+      heroTitleA: 'Una casa che rinasce,', heroTitleEm: 'lentamente', heroTitleB: ', a mano.',
+      heroLead: "Abbiamo lasciato la Scozia per una vecchia cascina sulle colline del Monferrato. Diventerà un B&B, un ritiro per chi scrive e un piccolo orto. Non è finita, e non c'è ancora una data — potete guardarla nascere.",
+      ctaSubscribe: 'Iscriviti su YouTube', ctaWatch: 'Guarda i video',
+      heroNote: 'Un video nuovo ogni poche settimane.',
+      introEyebrow: "Che cos'è",
+      introPull: 'Non un albergo. Non un marchio. Una casa sulle colline che stiamo rimettendo insieme, una stanza e una stagione alla volta.',
+      cols: [
+        { title: 'La casa', body: 'Quattro stanze, muri di pietra spessi e un tetto che ha richiesto un inverno intero. Sarà un B&B quando sarà pronta per esserlo, non prima.' },
+        { title: "L'orto", body: 'Ortaggi, alberi da frutto e moltissimo da imparare. Quasi tutto quello che cuciniamo nascerà a trenta metri dalla porta della cucina.' },
+        { title: 'Il ritiro', body: 'Stanze silenziose e un tavolo lungo per chi ha bisogno di un posto dove scrivere. Mattine lente, pomeriggi lunghi, nessuno che si aspetti niente da te.' },
+      ],
+      storyEyebrow: 'La storia',
+      storyTitle: 'Abbiamo comprato una casa in cui non avevamo mai dormito.',
+      story: [
+        "Siamo venuti in Monferrato per vedere una casa e siamo ripartiti avendone comprata un'altra — una cascina a Sessame con un rustico crollato, un pozzo e una collina lasciata a se stessa per dieci anni.",
+        "Il primo anno è stato soprattutto togliere: intonaco giù, pavimenti su, rovi fuori. Abbiamo imparato quali muratori si presentano e quali no. Abbiamo imparato a dire calce idraulica. Abbiamo passato un inverno nell'unica stanza asciutta, cucinando su un fornello da campeggio più a lungo di quanto vorremmo ammettere.",
+        'Non è finita. Forse non lo sarà mai. Alla fine è proprio questo il punto.',
+      ],
+      storyCaption: "L'ala ovest, prima che tornasse il tetto.",
+      nowEyebrow: 'A che punto siamo',
+      now: [
+        { when: 'Primavera 2026', what: "Tetto finito sull'ala ovest; piantate le prime aiuole." },
+        { when: 'Estate 2026', what: 'Nuovo intonaco al piano terra, e il pozzo di nuovo in uso.' },
+        { when: 'Poi', what: 'Due stanze per gli ospiti, e una cucina che meriti di cucinare.' },
+      ],
+      filmsEyebrow: 'I video', filmsTitle: 'Guarda i lavori',
+      filmsLead: 'Ogni poche settimane pubblichiamo un video di quello che abbiamo fatto davvero — le settimane buone e quelle andate storte.',
+      filmsListLabel: 'Tutti i video',
+      filmsFoot: 'I video nuovi vengono aggiunti in cima a questa lista, man mano che li facciamo.',
+      contactEyebrow: 'Scrivici', contactTitle: 'Venite a trovarci, prima o poi.',
+      contactLead: 'Non prendiamo ancora prenotazioni. Se volete sapere quando lo faremo, i video sono il modo migliore per seguirci — oppure scriveteci e ce ne ricorderemo.',
+      labelWhere: 'Dove', labelWatch: 'Guarda', labelFollow: 'Segui', labelWrite: 'Scrivi',
+      addressNote: 'Indirizzo completo a breve.',
+      footNote: 'Guardiamo avanti, e indietro.',
+    },
+  };
+
+  get lang() {
+    return this.state.lang || this.props.language || 'en';
+  }
+
+  componentDidMount() {
+    // The story image only sticks while it sits beside the text; once the
+    // section wraps to one column, sticking would pin it over the prose.
+    const syncSticky = () => {
+      const el = document.querySelector('[data-story-media]');
+      if (!el) return;
+      const sib = el.nextElementSibling;
+      const stacked = !sib || el.offsetTop !== sib.offsetTop;
+      el.style.position = stacked ? 'static' : 'sticky';
+    };
+    syncSticky();
+    this._syncSticky = syncSticky;
+    window.addEventListener('resize', syncSticky);
+    window.addEventListener('load', syncSticky);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncSticky);
+    setTimeout(syncSticky, 300);
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+    nodes.forEach((n) => {
+      if (n.getBoundingClientRect().top < window.innerHeight * 0.9) return;
+      n.style.opacity = '0';
+      n.style.transform = 'translateY(18px)';
+      n.style.transition = 'opacity 700ms cubic-bezier(0.25,0.6,0.3,1), transform 700ms cubic-bezier(0.25,0.6,0.3,1)';
+      io.observe(n);
+    });
+    this._io = io;
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._syncSticky) {
+      window.removeEventListener('resize', this._syncSticky);
+      window.removeEventListener('load', this._syncSticky);
+    }
+  }
+
+  renderVals() {
+    const lang = this.lang;
+    const t = this.copy[lang];
+    const active = Math.min(this.state.active, this.films.length - 1);
+    const cur = this.films[active] || { id: '', label: '', title: '' };
+    const setLang = (l) => this.setState({ lang: l });
+    return {
+      t,
+      enColor: lang === 'en' ? 'var(--terra)' : 'var(--pietra)',
+      itColor: lang === 'it' ? 'var(--terra)' : 'var(--pietra)',
+      setEn: () => setLang('en'),
+      setIt: () => setLang('it'),
+      playing: this.state.playing,
+      idle: !this.state.playing,
+      play: () => this.setState({ playing: true }),
+      embedSrc: 'https://www.youtube-nocookie.com/embed/' + cur.id + '?autoplay=1&rel=0&modestbranding=1',
+      activeThumb: 'https://i.ytimg.com/vi/' + cur.id + '/maxresdefault.jpg',
+      activeTitle: cur.title,
+      activeLabel: cur.label,
+      videos: this.films.map((f, i) => ({
+        ...f,
+        thumb: 'https://i.ytimg.com/vi/' + f.id + '/mqdefault.jpg',
+        bg: i === active ? 'var(--muro-scuro)' : 'transparent',
+        labelColor: i === active ? 'var(--terra)' : 'var(--pietra)',
+        select: () => this.setState({ active: i, playing: false }),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

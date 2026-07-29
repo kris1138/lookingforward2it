@@ -1,0 +1,278 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Cormorant Garamond|Lato))/i]",
+        "message": "Font not provided by the design system. Available: Cormorant Garamond, Lato."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|size|disabled|as|href|type|onClick|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, variant, size, disabled, as, href, type, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|quiet)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary' | 'quiet'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='as'] > Literal[value!=/^(?:button|a)$/]",
+        "message": "<Button> as must be one of 'button' | 'a'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:button|submit|reset)$/]",
+        "message": "<Button> type must be one of 'button' | 'submit' | 'reset'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|elevation|interactive|padding|onClick|key|ref|className|style|children)$/]",
+        "message": "<Card> doesn't accept that prop. Declared props: children, elevation, interactive, padding, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute[name.name='elevation'] > Literal[value!=/^(?:border|shadow|flat)$/]",
+        "message": "<Card> elevation must be one of 'border' | 'shadow' | 'flat'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Divider'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|key|ref|className|style|children)$/]",
+        "message": "<Divider> doesn't accept that prop. Declared props: variant."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Divider'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:dot|line)$/]",
+        "message": "<Divider> variant must be one of 'dot' | 'line'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|color|as|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, color, as."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Input'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|id|type|placeholder|value|onChange|multiline|rows|key|ref|className|style|children)$/]",
+        "message": "<Input> doesn't accept that prop. Declared props: label, id, type, placeholder, value, onChange, multiline, rows."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|key|ref|className|style|children)$/]",
+        "message": "<Tag> doesn't accept that prop. Declared props: children, tone."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:salvia|terra|grano|neutral)$/]",
+        "message": "<Tag> tone must be one of 'salvia' | 'terra' | 'grano' | 'neutral'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextLink'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|href|onClick|key|ref|className|style|children)$/]",
+        "message": "<TextLink> doesn't accept that prop. Declared props: children, href, onClick."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "Card": {
+        "replaces": []
+      },
+      "Divider": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "Input": {
+        "replaces": []
+      },
+      "Tag": {
+        "replaces": []
+      },
+      "TextLink": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent-gold",
+      "--accent-nature",
+      "--accent-warm",
+      "--bg-card",
+      "--bg-inverse",
+      "--bg-page",
+      "--bg-page-soft",
+      "--border-soft",
+      "--border-strong",
+      "--content-max",
+      "--duration-brand",
+      "--duration-slow",
+      "--ease-brand",
+      "--focus-ring",
+      "--font-body",
+      "--font-display",
+      "--grano",
+      "--gutter",
+      "--lh-body",
+      "--lh-display",
+      "--lh-heading",
+      "--ls-button",
+      "--ls-eyebrow",
+      "--ls-tight",
+      "--measure-body",
+      "--measure-max",
+      "--muro",
+      "--muro-chiaro",
+      "--muro-scuro",
+      "--ombra",
+      "--ombra-scura",
+      "--pietra",
+      "--radius-arch",
+      "--radius-input",
+      "--radius-pill",
+      "--radius-soft",
+      "--salvia",
+      "--salvia-ink",
+      "--salvia-tint",
+      "--shadow-card",
+      "--shadow-lift",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--space-section",
+      "--terra",
+      "--text-body",
+      "--text-eyebrow",
+      "--text-heading",
+      "--text-inverse",
+      "--text-muted",
+      "--type-body",
+      "--type-display",
+      "--type-eyebrow",
+      "--type-h1",
+      "--type-h2",
+      "--type-h3",
+      "--type-small",
+      "--weight-body",
+      "--weight-body-bold",
+      "--weight-display",
+      "--weight-display-medium"
+    ],
+    "tokenKinds": {
+      "--muro": "color",
+      "--grano": "color",
+      "--terra": "color",
+      "--salvia": "color",
+      "--ombra": "color",
+      "--muro-chiaro": "color",
+      "--muro-scuro": "color",
+      "--ombra-scura": "color",
+      "--pietra": "color",
+      "--bg-page": "color",
+      "--bg-page-soft": "color",
+      "--bg-card": "color",
+      "--bg-inverse": "color",
+      "--text-body": "font",
+      "--text-heading": "font",
+      "--text-muted": "font",
+      "--text-inverse": "font",
+      "--text-eyebrow": "font",
+      "--accent-warm": "color",
+      "--accent-gold": "color",
+      "--accent-nature": "color",
+      "--border-soft": "color",
+      "--border-strong": "color",
+      "--salvia-tint": "color",
+      "--salvia-ink": "color",
+      "--focus-ring": "color",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--weight-body": "font",
+      "--weight-body-bold": "font",
+      "--weight-display": "font",
+      "--weight-display-medium": "font",
+      "--type-display": "font",
+      "--type-h1": "font",
+      "--type-h2": "font",
+      "--type-h3": "font",
+      "--type-body": "font",
+      "--type-small": "font",
+      "--type-eyebrow": "font",
+      "--lh-display": "other",
+      "--lh-heading": "other",
+      "--lh-body": "other",
+      "--ls-eyebrow": "spacing",
+      "--ls-button": "spacing",
+      "--ls-tight": "spacing",
+      "--measure-body": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--space-section": "spacing",
+      "--content-max": "spacing",
+      "--measure-max": "spacing",
+      "--gutter": "spacing",
+      "--radius-soft": "radius",
+      "--radius-input": "radius",
+      "--radius-pill": "radius",
+      "--radius-arch": "radius",
+      "--shadow-card": "shadow",
+      "--shadow-lift": "shadow",
+      "--ease-brand": "other",
+      "--duration-brand": "other",
+      "--duration-slow": "other"
+    },
+    "fontFamilies": [
+      "Cormorant Garamond",
+      "Lato"
+    ]
+  }
+}

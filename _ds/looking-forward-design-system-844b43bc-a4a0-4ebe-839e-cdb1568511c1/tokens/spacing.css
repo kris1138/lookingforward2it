@@ -1,0 +1,35 @@
+/* Looking Forward — Spacing, shape & motion
+   The brand breathes: generous whitespace, soft geometry, slow motion. */
+:root {
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-section: clamp(64px, 10vw, 128px);
+
+  /* Layout */
+  --content-max: 1180px;
+  --measure-max: 720px;
+  --gutter: 32px;
+
+  /* Shape */
+  --radius-soft: 8px;      /* cards, images, fields (6–10px) */
+  --radius-input: 6px;
+  --radius-pill: 999px;
+  --radius-arch: 999px 999px 0 0;  /* signature arch for hero images */
+
+  /* Shadow — a single soft umber shadow; never combined with a border */
+  --shadow-card: 0 2px 12px rgba(125, 79, 53, 0.08);
+  --shadow-lift: 0 8px 28px rgba(125, 79, 53, 0.12);
+
+  /* Motion — subtle and slow, fades and gentle rises only */
+  --ease-brand: cubic-bezier(0.25, 0.6, 0.3, 1);  /* @kind other */
+  --duration-brand: 300ms;  /* @kind other */
+  --duration-slow: 400ms;   /* @kind other */
+}

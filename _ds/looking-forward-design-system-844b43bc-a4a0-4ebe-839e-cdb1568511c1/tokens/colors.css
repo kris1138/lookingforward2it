@@ -1,0 +1,42 @@
+/* Looking Forward — Colour
+   Five sun-faded colours named in Italian, rooted in the Monferrato landscape,
+   plus four derived tints. Never pure white, never pure black. */
+:root {
+  /* Core palette */
+  --muro: #F2E8D6;        /* old wall / linen — primary background */
+  --grano: #D4A257;       /* wheat gold — warm accent, links, underlines */
+  --terra: #C47A50;       /* terracotta — buttons, active states */
+  --salvia: #8A9B6E;      /* sage — nature/farm content, success */
+  --ombra: #7D4F35;       /* shadow / umber — primary text, borders */
+
+  /* Derived tints */
+  --muro-chiaro: #FDFAF5; /* lightest background, cards on Muro */
+  --muro-scuro: #E8DCC4;  /* subtle dividers, hover states on Muro */
+  --ombra-scura: #5A3826; /* dark headings, dark footers */
+  --pietra: #9A8A7A;      /* muted secondary text, captions, metadata */
+
+  /* Semantic aliases */
+  --bg-page: var(--muro);
+  --bg-page-soft: var(--muro-chiaro);
+  --bg-card: var(--muro-chiaro);
+  --bg-inverse: var(--ombra-scura);
+
+  --text-body: var(--ombra);
+  --text-heading: var(--ombra-scura);
+  --text-muted: var(--pietra);
+  --text-inverse: var(--muro);
+  --text-eyebrow: var(--terra);
+
+  --accent-warm: var(--terra);
+  --accent-gold: var(--grano);
+  --accent-nature: var(--salvia);
+
+  --border-soft: var(--muro-scuro);
+  --border-strong: var(--ombra);
+
+  /* Salvia tint used behind tags/pills */
+  --salvia-tint: rgba(138, 155, 110, 0.15);
+  --salvia-ink: #5F6E45;
+
+  --focus-ring: var(--grano);
+}

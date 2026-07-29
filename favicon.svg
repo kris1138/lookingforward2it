@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Looking Forward">
+  <!-- Placeholder mark. The brand doc forbids approximating the rolling-hills
+       logo before it ships, so this uses the one icon the brand does define:
+       the Terra middle dot on a Muro ground. -->
+  <rect width="32" height="32" rx="7" fill="#F2E8D6"/>
+  <circle cx="16" cy="16" r="5" fill="#C47A50"/>
+</svg>

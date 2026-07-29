@@ -20,7 +20,8 @@
       "Bash(command -v cwebp magick convert)",
       "Bash(python3 -c \"import PIL; print\\('PIL', PIL.__version__\\)\")",
       "Bash(git mv *)",
-      "Bash(git commit -q -m 'Rename main page to index.html so the site serves at the root URL *)"
+      "Bash(git commit -q -m 'Rename main page to index.html so the site serves at the root URL *)",
+      "Bash(git commit -q -m 'Add page metadata, vendor React, persist language, fall back on thumbnails *)"
     ]
   }
 }

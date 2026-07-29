@@ -1,8 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Looking Forward — rebuilding a farmhouse in Monferrato</title>
+<meta name="description" content="We left Scotland for an old farmhouse in the Monferrato hills of Piedmont. It's becoming a B&amp;B, a writers' retreat and a small produce farm — and you can watch it happen.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<!-- Link previews. These live in the static head on purpose: the scrapers
+     behind WhatsApp, iMessage and Slack don't run JavaScript, so anything the
+     runtime injects later is invisible to them. og:url and og:image must be
+     absolute AND match the host this is actually served from. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Looking Forward">
+<meta property="og:title" content="Looking Forward — rebuilding a farmhouse in Monferrato">
+<meta property="og:description" content="We left Scotland for an old farmhouse in the Monferrato hills. It's becoming a B&amp;B, a writers' retreat and a small produce farm — and you can watch it happen.">
+<meta property="og:url" content="https://lookingforward2.it/">
+<meta property="og:image" content="https://lookingforward2.it/images/hero.jpg">
+<meta property="og:image:alt" content="The Monferrato hills in low evening light.">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Serve React from vendor/ rather than unpkg: nothing renders until React
+     arrives, so a slow or blocked CDN reads as a broken site. support.js
+     checks window.__resources for a URL override before falling back to its
+     CDN default, so this needs no change to the generated runtime. -->
+<script>
+  window.__resources = {
+    "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "vendor/react.production.min.js",
+    "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "vendor/react-dom.production.min.js"
+  };
+</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -123,7 +153,7 @@
             </sc-if>
             <sc-if value="{{ idle }}" hint-placeholder-val="{{ true }}">
               <button onClick="{{ play }}" aria-label="Play" style="position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: none; background: none; cursor: pointer; display: block;" style-hover="opacity: 1;">
-                <img src="{{ activeThumb }}" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 400ms cubic-bezier(0.25,0.6,0.3,1);">
+                <img src="{{ activeThumb }}" onLoad="{{ thumbLoaded }}" alt="" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 400ms cubic-bezier(0.25,0.6,0.3,1);">
                 <span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(90,56,38,0.55), rgba(90,56,38,0.05) 55%);"></span>
                 <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 84px; height: 84px; border-radius: 999px; background: rgba(242,232,214,0.92); display: flex; align-items: center; justify-content: center; transition: transform 300ms cubic-bezier(0.25,0.6,0.3,1), background 300ms cubic-bezier(0.25,0.6,0.3,1);" style-hover="transform: translate(-50%, -50%) scale(1.07); background: var(--terra);">
                   <span style="width: 0; height: 0; border-left: 20px solid var(--ombra-scura); border-top: 13px solid transparent; border-bottom: 13px solid transparent; margin-left: 6px;"></span>
@@ -211,7 +241,19 @@ class Component extends DCLogic {
     { id: 'kQo-WP_Yllo', label: 'Film 01', title: 'The farmhouse, before anything' },
   ];
 
-  state = { lang: null, active: 0, playing: false };
+  // Read the stored language during construction rather than in
+  // componentDidMount, so a returning Italian reader never sees a frame of
+  // English before it switches.
+  state = { lang: this.storedLang(), active: 0, playing: false };
+
+  storedLang() {
+    try {
+      const v = localStorage.getItem('lf-lang');
+      return v === 'en' || v === 'it' ? v : null;
+    } catch (e) {
+      return null;  // Safari in private mode throws on localStorage access
+    }
+  }
 
   copy = {
     en: {
@@ -297,6 +339,10 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
+    // Keep <html lang> honest for screen readers and translation prompts —
+    // the static attribute says 'en', which is wrong on a restored 'it' visit.
+    document.documentElement.lang = this.lang;
+
     // The story image only sticks while it sits beside the text; once the
     // section wraps to one column, sticking would pin it over the prose.
     const syncSticky = () => {
@@ -347,7 +393,11 @@ class Component extends DCLogic {
     const t = this.copy[lang];
     const active = Math.min(this.state.active, this.films.length - 1);
     const cur = this.films[active] || { id: '', label: '', title: '' };
-    const setLang = (l) => this.setState({ lang: l });
+    const setLang = (l) => {
+      try { localStorage.setItem('lf-lang', l); } catch (e) {}
+      document.documentElement.lang = l;
+      this.setState({ lang: l });
+    };
     return {
       t,
       enColor: lang === 'en' ? 'var(--terra)' : 'var(--pietra)',
@@ -357,6 +407,17 @@ class Component extends DCLogic {
       playing: this.state.playing,
       idle: !this.state.playing,
       play: () => this.setState({ playing: true }),
+      // A film with no maxresdefault.jpg doesn't fail cleanly: YouTube answers
+      // 404 with a 120x90 grey placeholder image, so the browser reports a
+      // successful load and no error event ever fires. Decoded width is the
+      // only reliable signal, so step down the sizes on load instead.
+      thumbLoaded: (e) => {
+        const el = e.currentTarget || e.target;
+        if (!el || el.naturalWidth > 120) return;
+        const next = { maxresdefault: 'hq720', hq720: 'mqdefault' };
+        const m = /\/(maxresdefault|hq720)\.jpg$/.exec(el.src);
+        if (m) el.src = el.src.replace(m[1] + '.jpg', next[m[1]] + '.jpg');
+      },
       embedSrc: 'https://www.youtube-nocookie.com/embed/' + cur.id + '?autoplay=1&rel=0&modestbranding=1',
       activeThumb: 'https://i.ytimg.com/vi/' + cur.id + '/maxresdefault.jpg',
       activeTitle: cur.title,

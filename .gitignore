@@ -1,1 +1,5 @@
 .DS_Store
+Thumbs.db
+
+# Local Claude Code settings (machine-specific, not shared)
+.claude/settings.local.json

@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "**/.DS_Store": true
+  },
+  "search.exclude": {
+    "vendor/**": true,
+    "_ds/**/_ds_bundle.js": true
+  },
+  "files.watcherExclude": {
+    "vendor/**": true,
+    "_ds/**": true
+  }
+}

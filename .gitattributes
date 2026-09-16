@@ -1,0 +1,9 @@
+* text=auto eol=lf
+
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.svg text
+
+vendor/** linguist-vendored
+_ds/** linguist-generated

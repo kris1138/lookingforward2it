@@ -1,0 +1,23 @@
+---
+interface Props {
+  color?: 'ombra' | 'muro';
+  size?: 'md' | 'lg';
+  href?: string;
+  class?: string;
+}
+const { color = 'ombra', size = 'md', href = '/', class: className } = Astro.props;
+
+const colors = { ombra: 'text-ombra', muro: 'text-muro' };
+const sizes = { md: 'text-[26px]', lg: 'text-[30px]' };
+
+const classes = [
+  'font-display italic font-semibold leading-none no-underline',
+  colors[color],
+  sizes[size],
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<a href={href} class={classes}>Looking&nbsp;Forward<span class="text-terra">&nbsp;&middot;</span></a>

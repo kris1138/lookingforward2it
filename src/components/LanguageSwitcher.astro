@@ -1,0 +1,32 @@
+---
+import { localizedPaths, type Lang, type RouteKey } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  current: RouteKey;
+}
+const { lang, current } = Astro.props;
+const paths = localizedPaths(current);
+---
+
+<div class="flex items-center gap-2 border-l border-muro-scuro pl-2">
+  <a
+    href={paths.en}
+    class:list={[
+      'font-body text-xs font-bold tracking-button no-underline',
+      lang === 'en' ? 'text-terra' : 'text-pietra',
+    ]}
+  >
+    EN
+  </a>
+  <span class="text-muro-scuro">/</span>
+  <a
+    href={paths.it}
+    class:list={[
+      'font-body text-xs font-bold tracking-button no-underline',
+      lang === 'it' ? 'text-terra' : 'text-pietra',
+    ]}
+  >
+    IT
+  </a>
+</div>

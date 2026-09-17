@@ -1,0 +1,25 @@
+---
+interface Props {
+  color?: 'terra' | 'grano' | 'muro' | 'pietra';
+  as?: 'div' | 'p' | 'span';
+  class?: string;
+}
+const { color = 'terra', as: Tag = 'div', class: className } = Astro.props;
+
+const colors = {
+  terra: 'text-terra',
+  grano: 'text-grano',
+  muro: 'text-muro',
+  pietra: 'text-pietra',
+};
+
+const classes = [
+  'm-0 font-body font-bold text-label uppercase tracking-label',
+  colors[color],
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<Tag class={classes}><slot /></Tag>

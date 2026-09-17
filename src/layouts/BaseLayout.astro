@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import { localizedPaths, getCopy, type Lang, type RouteKey } from '../i18n/ui';
+import { SITE_URL } from '../config';
+
+interface Props {
+  lang: Lang;
+  routeKey: RouteKey;
+  title?: string;
+  description?: string;
+}
+const { lang, routeKey, title, description } = Astro.props;
+const t = getCopy(lang);
+const paths = localizedPaths(routeKey);
+const canonical = `${SITE_URL}${paths[lang]}`;
+const pageTitle = title ?? t.meta.title;
+const pageDescription = description ?? t.meta.description;
+const ogImage = `${SITE_URL}/images/hero.jpg`;
+const ogLocale = lang === 'en' ? 'en_GB' : 'it_IT';
+const ogLocaleAlternate = lang === 'en' ? 'it_IT' : 'en_GB';
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="alternate" hreflang="en" href={`${SITE_URL}${paths.en}`} />
+    <link rel="alternate" hreflang="it" href={`${SITE_URL}${paths.it}`} />
+    <link rel="alternate" hreflang="x-default" href={`${SITE_URL}${paths.en}`} />
+
+    <!-- Link previews. Static on purpose: the scrapers behind WhatsApp,
+         iMessage and Slack don't run JavaScript, so anything injected at
+         runtime would be invisible to them. og:url/og:image stay absolute. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Looking Forward" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="The Monferrato hills in low evening light." />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlternate} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <slot />
+    <script>
+      import '../scripts/scroll-reveal';
+    </script>
+  </body>
+</html>

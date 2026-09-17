@@ -1,0 +1,70 @@
+---
+type InputType = 'text' | 'email' | 'tel' | 'date' | 'number' | 'url' | 'search';
+
+interface Props {
+  label?: string;
+  id?: string;
+  name?: string;
+  type?: InputType;
+  placeholder?: string;
+  multiline?: boolean;
+  rows?: number;
+  required?: boolean;
+  class?: string;
+}
+const {
+  label,
+  id,
+  name,
+  type = 'text',
+  placeholder,
+  multiline = false,
+  rows = 4,
+  required = false,
+  class: className,
+} = Astro.props;
+
+const fieldId = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined);
+
+const fieldClasses = [
+  'w-full box-border rounded-input border border-muro-scuro bg-muro-chiaro px-[14px] py-3 font-body text-base text-ombra outline-none transition-[box-shadow,border-color] duration-brand ease-brand focus:border-grano focus:shadow-[0_0_0_3px_rgba(212,162,87,0.35)]',
+  multiline ? 'resize-y' : '',
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<div class="flex flex-col gap-[7px]">
+  {
+    label && (
+      <label
+        for={fieldId}
+        class="font-body text-[12px] font-bold uppercase tracking-[0.1em] text-pietra"
+      >
+        {label}
+      </label>
+    )
+  }
+  {
+    multiline ? (
+      <textarea
+        id={fieldId}
+        name={name ?? fieldId}
+        rows={rows}
+        placeholder={placeholder}
+        required={required}
+        class={fieldClasses}
+      />
+    ) : (
+      <input
+        id={fieldId}
+        name={name ?? fieldId}
+        type={type}
+        placeholder={placeholder}
+        required={required}
+        class={fieldClasses}
+      />
+    )
+  }
+</div>

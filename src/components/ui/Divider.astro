@@ -1,0 +1,29 @@
+---
+interface Props {
+  variant?: 'dot' | 'line';
+  class?: string;
+}
+const { variant = 'dot', class: className } = Astro.props;
+---
+
+{
+  variant === 'dot' ? (
+    <div
+      role="separator"
+      class={[
+        'flex items-center justify-center py-8 text-xl leading-none text-terra',
+        className,
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
+      &middot;
+    </div>
+  ) : (
+    <hr
+      class={['my-8 border-0 border-t border-muro-scuro', className]
+        .filter(Boolean)
+        .join(' ')}
+    />
+  )
+}

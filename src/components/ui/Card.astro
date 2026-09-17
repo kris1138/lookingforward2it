@@ -1,0 +1,40 @@
+---
+interface Props {
+  elevation?: 'border' | 'shadow' | 'flat';
+  interactive?: boolean;
+  padding?: string;
+  href?: string;
+  class?: string;
+}
+
+const {
+  elevation = 'border',
+  interactive = false,
+  padding = 'p-8',
+  href,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const looks = {
+  border: 'border border-muro-scuro shadow-none',
+  shadow: interactive ? 'shadow-card hover:shadow-lift' : 'shadow-card',
+  flat: 'border-none shadow-none',
+};
+
+const classes = [
+  'block rounded-soft bg-muro-chiaro transition-[transform,box-shadow] duration-brand ease-brand',
+  padding,
+  looks[elevation],
+  interactive ? 'cursor-pointer hover:-translate-y-0.5' : '',
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag href={href} class={classes} {...rest}>
+  <slot />
+</Tag>

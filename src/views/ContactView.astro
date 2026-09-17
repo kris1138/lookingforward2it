@@ -1,0 +1,85 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Eyebrow from '../components/ui/Eyebrow.astro';
+import Input from '../components/ui/Input.astro';
+import Button from '../components/ui/Button.astro';
+import Card from '../components/ui/Card.astro';
+import { getCopy, type Lang } from '../i18n/ui';
+import { YOUTUBE_CHANNEL_URL, INSTAGRAM_URL, CONTACT_EMAIL } from '../data/films';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getCopy(lang);
+const addressLines = t.contact.address.split('\n');
+---
+
+<PageLayout lang={lang} routeKey="contact">
+  <section
+    data-reveal
+    class="mx-auto flex max-w-content flex-wrap items-start gap-[clamp(44px,6vw,80px)] px-[clamp(20px,4vw,48px)] py-[clamp(56px,8vw,96px)]"
+  >
+    <div class="min-w-0 flex-[1_1_340px]">
+      <Eyebrow>{t.contact.eyebrow}</Eyebrow>
+      <h1
+        class="mb-5 mt-3.5 max-w-[12em] font-display text-[clamp(32px,5vw,44px)] font-semibold leading-[1.1] text-ombra-scura"
+      >
+        {t.contact.title}
+      </h1>
+      <p class="mb-8 max-w-[32em] text-[clamp(16.5px,1.6vw,18px)] leading-[1.7] text-ombra [text-wrap:pretty]">
+        {t.contact.lead}
+      </p>
+
+      <div class="grid gap-[30px]">
+        <div>
+          <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
+            {t.contact.labelWhere}
+          </div>
+          <p class="m-0 text-base leading-[1.7] text-ombra">
+            {addressLines.map((line, i) => <>{i > 0 && <br />}{line}</>)}
+          </p>
+          <p class="mt-1.5 text-[13px] text-pietra">{t.contact.addressNote}</p>
+        </div>
+        <div>
+          <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
+            {t.contact.labelWatch}
+          </div>
+          <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener" class="text-base text-ombra">
+            youtube.com/@lookingforward2it
+          </a>
+        </div>
+        <div>
+          <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
+            {t.contact.labelFollow}
+          </div>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener" class="text-base text-ombra">
+            instagram.com/lookingforward2.it
+          </a>
+        </div>
+        <div>
+          <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
+            {t.contact.labelWrite}
+          </div>
+          <a href={`mailto:${CONTACT_EMAIL}`} class="text-base text-ombra">{CONTACT_EMAIL}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="min-w-0 flex-[0.95_1_360px]">
+      <Card elevation="shadow" padding="p-8">
+        <form
+          action={`mailto:${CONTACT_EMAIL}`}
+          method="post"
+          enctype="text/plain"
+          class="flex flex-col gap-[18px]"
+        >
+          <Input label={t.contact.form.name} name="name" required />
+          <Input label={t.contact.form.email} name="email" type="email" required />
+          <Input label={t.contact.form.message} name="message" multiline rows={5} required />
+          <Button type="submit" variant="primary">{t.contact.form.submit}</Button>
+        </form>
+      </Card>
+    </div>
+  </section>
+</PageLayout>

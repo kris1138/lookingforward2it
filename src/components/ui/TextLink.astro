@@ -1,0 +1,18 @@
+---
+interface Props {
+  href?: string;
+  target?: string;
+  rel?: string;
+  class?: string;
+}
+const { href = '#', target, rel, class: className } = Astro.props;
+
+const classes = [
+  'cursor-pointer text-ombra underline decoration-grano decoration-2 underline-offset-[3px] transition-colors duration-brand ease-brand hover:text-terra hover:decoration-terra',
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<a href={href} target={target} rel={rel} class={classes}><slot /></a>

@@ -1,0 +1,60 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'quiet';
+  size?: 'sm' | 'md' | 'lg';
+  as?: 'button' | 'a';
+  href?: string;
+  type?: 'button' | 'submit';
+  disabled?: boolean;
+  target?: string;
+  rel?: string;
+  class?: string;
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  as = 'button',
+  href,
+  type = 'button',
+  disabled = false,
+  target,
+  rel,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const sizes = {
+  sm: 'px-5 py-[10px] text-[11px]',
+  md: 'px-7 py-[14px] text-[12px]',
+  lg: 'px-9 py-[17px] text-[13px]',
+};
+
+const variants = {
+  primary: 'border-[1.5px] border-transparent bg-terra text-muro-chiaro hover:bg-ombra',
+  secondary:
+    'border-[1.5px] border-ombra bg-transparent text-ombra hover:bg-ombra hover:text-muro',
+  quiet: 'border-[1.5px] border-transparent bg-transparent text-ombra hover:text-terra',
+};
+
+const classes = [
+  'inline-flex cursor-pointer items-center justify-center gap-2 rounded-input font-body font-bold uppercase tracking-button no-underline transition-[background-color,color,transform] duration-brand ease-brand active:translate-y-px disabled:cursor-not-allowed disabled:opacity-45',
+  sizes[size],
+  variants[variant],
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+{
+  as === 'a' ? (
+    <a href={href} target={target} rel={rel} class={classes} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} disabled={disabled} class={classes} {...rest}>
+      <slot />
+    </button>
+  )
+}

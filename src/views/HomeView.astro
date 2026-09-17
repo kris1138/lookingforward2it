@@ -1,0 +1,143 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Eyebrow from '../components/ui/Eyebrow.astro';
+import Button from '../components/ui/Button.astro';
+import Divider from '../components/ui/Divider.astro';
+import FilmTheater from '../components/FilmTheater';
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/hero.jpg';
+import { getCopy, routePath, type Lang } from '../i18n/ui';
+import { films, YOUTUBE_SUBSCRIBE_URL } from '../data/films';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getCopy(lang);
+---
+
+<PageLayout lang={lang} routeKey="home">
+  <section
+    id="top"
+    data-reveal
+    class="mx-auto flex max-w-content flex-wrap items-end gap-[clamp(36px,5vw,72px)] px-[clamp(20px,4vw,48px)] pt-[clamp(44px,7vw,88px)]"
+  >
+    <div class="min-w-0 flex-[1.06_1_400px] pb-6">
+      <Eyebrow>{t.hero.eyebrow}</Eyebrow>
+      <h1
+        class="mb-[22px] mt-[18px] font-display text-[clamp(38px,6.4vw,68px)] font-semibold leading-[1.04] tracking-snug text-ombra-scura"
+      >
+        {t.hero.titleA}<br /><em class="font-medium">{t.hero.titleEm}</em>{t.hero.titleB}
+      </h1>
+      <p class="mb-[34px] max-w-[30em] text-[clamp(17px,1.6vw,19px)] leading-[1.65] text-ombra">
+        {t.hero.lead}
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <Button
+          as="a"
+          href={YOUTUBE_SUBSCRIBE_URL}
+          target="_blank"
+          rel="noopener"
+          variant="primary"
+          size="lg"
+        >
+          {t.hero.ctaSubscribe}
+        </Button>
+        <Button as="a" href="#films" variant="secondary" size="lg">
+          {t.hero.ctaWatch}
+        </Button>
+      </div>
+      <p class="mt-[22px] text-sm text-pietra">{t.hero.note}</p>
+    </div>
+    <div
+      class="h-[clamp(320px,46vw,520px)] min-w-0 flex-[0.84_1_300px] overflow-hidden rounded-arch bg-muro-scuro"
+    >
+      <Image
+        src={heroImage}
+        alt="The farmhouse at golden hour"
+        class="h-full w-full object-cover"
+      />
+    </div>
+  </section>
+
+  <div data-reveal>
+    <Divider variant="dot" />
+  </div>
+
+  <section data-reveal class="mx-auto max-w-[760px] px-[clamp(20px,4vw,48px)] text-center">
+    <Eyebrow>{t.intro.eyebrow}</Eyebrow>
+    <p
+      class="mt-4 font-display text-[clamp(23px,3.6vw,31px)] font-medium italic leading-[1.38] text-ombra-scura"
+    >
+      {t.intro.pull}
+    </p>
+  </section>
+
+  <section
+    data-reveal
+    class="mx-auto mt-[clamp(56px,8vw,88px)] grid max-w-content gap-[clamp(30px,4vw,56px)] px-[clamp(20px,4vw,48px)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))]"
+  >
+    {
+      t.cols.map((col) => (
+        <div class="border-t border-muro-scuro pt-5">
+          <h3 class="mb-2.5 font-display text-[23px] font-semibold italic text-ombra-scura">
+            {col.title}
+          </h3>
+          <p class="m-0 text-base leading-[1.7] text-ombra [text-wrap:pretty]">{col.body}</p>
+        </div>
+      ))
+    }
+  </section>
+
+  <section data-reveal class="mx-auto mt-[clamp(76px,11vw,128px)] max-w-content px-[clamp(20px,4vw,48px)]">
+    <Eyebrow>{t.story.eyebrow}</Eyebrow>
+    <h2
+      class="mb-7 mt-3.5 max-w-[15em] font-display text-[clamp(29px,4.6vw,44px)] font-semibold leading-[1.12] text-ombra-scura"
+    >
+      {t.story.title}
+    </h2>
+    <p class="mb-6 max-w-[34em] text-[clamp(16.5px,1.6vw,18px)] leading-[1.7] text-ombra [text-wrap:pretty]">
+      {t.story.paragraphs[0]}
+    </p>
+    <a href={routePath(lang, 'story')} class="font-body font-bold text-ombra">
+      {t.story.teaserCta} &rarr;
+    </a>
+  </section>
+
+  <section id="films" data-reveal class="mt-32 border-y border-muro-scuro bg-muro-chiaro py-[clamp(64px,9vw,96px)]">
+    <div class="mx-auto max-w-content px-[clamp(20px,4vw,48px)]">
+      <div class="mb-10 flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+        <div class="min-w-0 flex-[1_1_320px]">
+          <Eyebrow>{t.films.eyebrow}</Eyebrow>
+          <h2 class="my-3 font-display text-[clamp(28px,4.2vw,40px)] font-semibold leading-[1.12] text-ombra-scura">
+            {t.films.title}
+          </h2>
+          <p class="m-0 max-w-[40em] text-[clamp(16px,1.5vw,17px)] leading-[1.65] text-ombra">
+            {t.films.lead}
+          </p>
+        </div>
+        <Button as="a" href={YOUTUBE_SUBSCRIBE_URL} target="_blank" rel="noopener" variant="secondary">
+          {t.hero.ctaSubscribe}
+        </Button>
+      </div>
+      <FilmTheater client:visible films={films} listLabel={t.films.listLabel} foot={t.films.foot} />
+    </div>
+  </section>
+
+  <section data-reveal class="bg-ombra-scura text-muro">
+    <div class="mx-auto max-w-content px-[clamp(20px,4vw,48px)] py-[clamp(66px,9vw,104px)]">
+      <Eyebrow color="grano">{t.contact.eyebrow}</Eyebrow>
+      <h2
+        class="mb-5 mt-3.5 max-w-[12em] font-display text-[clamp(29px,4.6vw,44px)] font-semibold leading-[1.1] text-muro"
+      >
+        {t.contact.title}
+      </h2>
+      <p class="mb-8 max-w-[32em] text-[clamp(16.5px,1.6vw,18px)] leading-[1.7] text-muro/82 [text-wrap:pretty]">
+        {t.contact.lead}
+      </p>
+      <Button as="a" href={routePath(lang, 'contact')} variant="primary" size="lg">
+        {t.contact.teaserCta}
+      </Button>
+    </div>
+  </section>
+</PageLayout>

@@ -1,5 +1,6 @@
 {
   "recommendations": [
-    "ritwickdey.liveserver"
+    "astro-build.astro-vscode",
+    "bradlc.vscode-tailwindcss"
   ]
 }

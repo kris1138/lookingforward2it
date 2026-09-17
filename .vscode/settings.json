@@ -3,11 +3,13 @@
     "**/.DS_Store": true
   },
   "search.exclude": {
-    "vendor/**": true,
-    "_ds/**/_ds_bundle.js": true
+    "_ds/**/_ds_bundle.js": true,
+    "node_modules/**": true,
+    "dist/**": true
   },
   "files.watcherExclude": {
-    "vendor/**": true,
-    "_ds/**": true
+    "_ds/**": true,
+    "node_modules/**": true,
+    "dist/**": true
   }
 }

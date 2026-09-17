@@ -5,5 +5,4 @@
 *.png binary
 *.svg text
 
-vendor/** linguist-vendored
 _ds/** linguist-generated

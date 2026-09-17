@@ -10,66 +10,76 @@
 @import "@fontsource/lato/400.css";
 @import "@fontsource/lato/700.css";
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: var(--muro);
-  color: var(--ombra);
-  font-family: var(--font-body);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
-}
-
-img,
-iframe {
-  max-width: 100%;
-}
-
-a {
-  color: var(--ombra);
-  text-decoration: underline;
-  text-decoration-color: var(--grano);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-  transition:
-    color var(--duration-brand) var(--ease-brand),
-    text-decoration-color var(--duration-brand) var(--ease-brand);
-}
-
-a:hover {
-  color: var(--terra);
-  text-decoration-color: var(--terra);
-}
-
-::selection {
-  background: rgba(212, 162, 87, 0.35);
-}
-
-/* Scroll-reveal base state, toggled by src/scripts/scroll-reveal.ts */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity var(--duration-slow) var(--ease-brand),
-    transform var(--duration-slow) var(--ease-brand);
-}
-
-[data-reveal].is-revealed {
-  opacity: 1;
-  transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
+/*
+ * Everything below lives in Tailwind's "base" layer so that utility
+ * classes (which Tailwind puts in its "utilities" layer, always later
+ * in the cascade) can override it — e.g. no-underline on a Button/Nav
+ * link, or hover:bg-ombra on a Button. Unlayered CSS always beats
+ * layered CSS regardless of selector specificity, so leaving this
+ * un-layered would make Tailwind's utilities on <a>/<button> unwinnable.
+ */
+@layer base {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
 
+  body {
+    margin: 0;
+    background: var(--muro);
+    color: var(--ombra);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  img,
+  iframe {
+    max-width: 100%;
+  }
+
+  a {
+    color: var(--ombra);
+    text-decoration: underline;
+    text-decoration-color: var(--grano);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition:
+      color var(--duration-brand) var(--ease-brand),
+      text-decoration-color var(--duration-brand) var(--ease-brand);
+  }
+
+  a:hover {
+    color: var(--terra);
+    text-decoration-color: var(--terra);
+  }
+
+  ::selection {
+    background: rgba(212, 162, 87, 0.35);
+  }
+
+  /* Scroll-reveal base state, toggled by src/scripts/scroll-reveal.ts */
   [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity var(--duration-slow) var(--ease-brand),
+      transform var(--duration-slow) var(--ease-brand);
+  }
+
+  [data-reveal].is-revealed {
     opacity: 1;
     transform: none;
-    transition: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 }

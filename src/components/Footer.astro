@@ -4,8 +4,10 @@ import { routePath, getCopy, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
+  /** Drop the top margin to a 1px seam, for pages that end on a section already in the footer's colour. */
+  flush?: boolean;
 }
-const { lang } = Astro.props;
+const { lang, flush = false } = Astro.props;
 const t = getCopy(lang);
 
 const visitLinks = [
@@ -17,7 +19,7 @@ const visitLinks = [
 const findUsLines = t.footer.findUs.split('\n');
 ---
 
-<footer class="mt-24 bg-ombra-scura text-muro">
+<footer class:list={[flush ? 'mt-px' : 'mt-24', 'bg-ombra-scura text-muro [--focus-outline:var(--focus-ring)]']}>
   <div
     class="mx-auto grid max-w-content gap-10 px-[clamp(20px,4vw,48px)] py-16 md:grid-cols-[1.4fr_1fr_1fr]"
   >
@@ -34,7 +36,7 @@ const findUsLines = t.footer.findUs.split('\n');
       {
         visitLinks.map((link) => (
           <div class="mb-2.5">
-            <a href={link.href} class="font-body text-sm text-muro/85 no-underline">
+            <a href={link.href} class="font-body text-sm text-muro/85 decoration-transparent hover:text-muro hover:decoration-terra active:text-muro active:decoration-terra">
               {link.label}
             </a>
           </div>
@@ -59,7 +61,7 @@ const findUsLines = t.footer.findUs.split('\n');
   </div>
   <div class="border-t border-muro/15">
     <div
-      class="mx-auto flex max-w-content flex-wrap justify-between gap-x-6 gap-y-2 px-[clamp(20px,4vw,48px)] py-[22px] font-body text-xs text-muro/55"
+      class="mx-auto flex max-w-content flex-wrap justify-between gap-x-6 gap-y-2 px-[clamp(20px,4vw,48px)] py-[22px] font-body text-xs text-muro/70"
     >
       <span>&copy; 2026 &middot; lookingforward2.it</span>
       <span class="font-display text-[15px] italic text-muro/70">{t.footer.note}</span>

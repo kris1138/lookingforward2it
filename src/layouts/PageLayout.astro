@@ -9,14 +9,15 @@ interface Props {
   routeKey: RouteKey;
   title?: string;
   description?: string;
+  footerFlush?: boolean;
 }
-const { lang, routeKey, title, description } = Astro.props;
+const { lang, routeKey, title, description, footerFlush } = Astro.props;
 ---
 
 <BaseLayout lang={lang} routeKey={routeKey} title={title} description={description}>
   <div class="min-h-screen bg-muro">
     <Nav lang={lang} current={routeKey} />
     <slot />
-    <Footer lang={lang} />
+    <Footer lang={lang} flush={footerFlush} />
   </div>
 </BaseLayout>

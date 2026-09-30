@@ -3,6 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import Eyebrow from '../components/ui/Eyebrow.astro';
 import Input from '../components/ui/Input.astro';
 import Button from '../components/ui/Button.astro';
+import TextLink from '../components/ui/TextLink.astro';
 import Card from '../components/ui/Card.astro';
 import { getCopy, type Lang } from '../i18n/ui';
 import { YOUTUBE_CHANNEL_URL, INSTAGRAM_URL, CONTACT_EMAIL } from '../data/films';
@@ -45,23 +46,23 @@ const addressLines = t.contact.address.split('\n');
           <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
             {t.contact.labelWatch}
           </div>
-          <a href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener" class="text-base text-ombra">
+          <TextLink href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener" class="text-base">
             youtube.com/@lookingforward2it
-          </a>
+          </TextLink>
         </div>
         <div>
           <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
             {t.contact.labelFollow}
           </div>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener" class="text-base text-ombra">
+          <TextLink href={INSTAGRAM_URL} target="_blank" rel="noopener" class="text-base">
             instagram.com/lookingforward2.it
-          </a>
+          </TextLink>
         </div>
         <div>
           <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
             {t.contact.labelWrite}
           </div>
-          <a href={`mailto:${CONTACT_EMAIL}`} class="text-base text-ombra">{CONTACT_EMAIL}</a>
+          <TextLink href={`mailto:${CONTACT_EMAIL}`} class="text-base">{CONTACT_EMAIL}</TextLink>
         </div>
       </div>
     </div>

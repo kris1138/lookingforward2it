@@ -16,7 +16,7 @@ const { lang } = Astro.props;
 const t = getCopy(lang);
 ---
 
-<PageLayout lang={lang} routeKey="home">
+<PageLayout lang={lang} routeKey="home" footerFlush>
   <section
     id="top"
     data-reveal
@@ -99,7 +99,7 @@ const t = getCopy(lang);
     <p class="mb-6 max-w-[34em] text-[clamp(16.5px,1.6vw,18px)] leading-[1.7] text-ombra [text-wrap:pretty]">
       {t.story.paragraphs[0]}
     </p>
-    <a href={routePath(lang, 'story')} class="font-body font-bold text-ombra">
+    <a href={routePath(lang, 'story')} class="font-body font-bold">
       {t.story.teaserCta} &rarr;
     </a>
   </section>
@@ -124,7 +124,7 @@ const t = getCopy(lang);
     </div>
   </section>
 
-  <section data-reveal class="bg-ombra-scura text-muro">
+  <section data-reveal class="bg-ombra-scura text-muro [--focus-outline:var(--focus-ring)]">
     <div class="mx-auto max-w-content px-[clamp(20px,4vw,48px)] py-[clamp(66px,9vw,104px)]">
       <Eyebrow color="grano">{t.contact.eyebrow}</Eyebrow>
       <h2

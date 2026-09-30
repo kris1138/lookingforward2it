@@ -8,7 +8,7 @@ interface Props {
 const { href = '#', target, rel, class: className } = Astro.props;
 
 const classes = [
-  'cursor-pointer text-ombra underline decoration-grano decoration-2 underline-offset-[3px] transition-colors duration-brand ease-brand hover:text-terra hover:decoration-terra',
+  'cursor-pointer text-ombra underline decoration-transparent decoration-1 underline-offset-4 transition-colors duration-brand ease-brand hover:text-ombra-scura hover:decoration-terra active:text-ombra-scura active:decoration-terra',
   className,
 ]
   .filter(Boolean)

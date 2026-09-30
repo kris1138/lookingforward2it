@@ -39,8 +39,9 @@
 
   a {
     color: var(--ombra);
+    /* Underline is always drawn but transparent at rest, so hover fades it in. */
     text-decoration: underline;
-    text-decoration-color: var(--grano);
+    text-decoration-color: transparent;
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
     transition:
@@ -48,9 +49,23 @@
       text-decoration-color var(--duration-brand) var(--ease-brand);
   }
 
-  a:hover {
-    color: var(--terra);
+  /* Darken rather than lighten: terra text on muro is only 2.77:1. */
+  a:hover,
+  a:active {
+    color: var(--ombra-scura);
     text-decoration-color: var(--terra);
+  }
+
+  /* Keyboard focus ring. Own variable rather than the DS's --focus-ring
+     (grano, 1.9:1 on muro — too faint on light backgrounds); dark
+     sections set --focus-outline back to var(--focus-ring). */
+  :root {
+    --focus-outline: var(--ombra);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-outline);
+    outline-offset: 3px;
   }
 
   ::selection {

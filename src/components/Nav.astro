@@ -28,11 +28,12 @@ const items: { key: RouteKey | 'films'; label: string; href: string }[] = [
         items.map((item) => (
           <a
             href={item.href}
+            aria-current={item.key === current ? 'page' : undefined}
             class:list={[
-              'border-b-2 pb-[3px] font-body text-xs font-bold uppercase tracking-button no-underline',
+              'font-body text-xs font-bold uppercase tracking-button text-ombra underline decoration-1 underline-offset-4 transition-colors duration-brand ease-brand',
               item.key === current
-                ? 'border-grano text-terra'
-                : 'border-transparent text-ombra',
+                ? 'decoration-ombra'
+                : 'decoration-transparent hover:text-ombra-scura hover:decoration-terra active:text-ombra-scura active:decoration-terra',
             ]}
           >
             {item.label}

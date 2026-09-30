@@ -7,26 +7,29 @@ interface Props {
 }
 const { lang, current } = Astro.props;
 const paths = localizedPaths(current);
+const langs: Lang[] = ['en', 'it'];
 ---
 
-<div class="flex items-center gap-2 border-l border-muro-scuro pl-2">
-  <a
-    href={paths.en}
-    class:list={[
-      'font-body text-xs font-bold tracking-button no-underline',
-      lang === 'en' ? 'text-terra' : 'text-pietra',
-    ]}
-  >
-    EN
-  </a>
-  <span class="text-muro-scuro">/</span>
-  <a
-    href={paths.it}
-    class:list={[
-      'font-body text-xs font-bold tracking-button no-underline',
-      lang === 'it' ? 'text-terra' : 'text-pietra',
-    ]}
-  >
-    IT
-  </a>
+<div class="flex items-center gap-0.5 border-l border-muro-scuro pl-1.5">
+  {
+    langs.map((l, i) => (
+      <>
+        {i > 0 && <span aria-hidden="true" class="text-muro-scuro">/</span>}
+        <a
+          href={paths[l]}
+          hreflang={l}
+          lang={l}
+          aria-current={l === lang ? 'true' : undefined}
+          class:list={[
+            'inline-flex min-h-6 min-w-6 items-center justify-center px-1 font-body text-xs font-bold tracking-button text-ombra underline decoration-1 underline-offset-4 transition-colors duration-brand ease-brand',
+            l === lang
+              ? 'decoration-ombra'
+              : 'decoration-transparent hover:text-ombra-scura hover:decoration-terra active:text-ombra-scura active:decoration-terra',
+          ]}
+        >
+          {l.toUpperCase()}
+        </a>
+      </>
+    ))
+  }
 </div>

@@ -1,5 +1,12 @@
 # Auto-populate the Film Theater from the YouTube channel
 
+> **Superseded during implementation:** the YouTube Data API approach below
+> was replaced by the channel's public RSS feed (no Google Cloud project or
+> API key), accepting that the feed only lists the latest 15 uploads. Labels
+> come from the episode number in the title ("Episode 16") rather than a
+> count. See `src/data/youtube.ts` and the Films paragraph in `CLAUDE.md`
+> for what was actually built.
+
 ## Context
 Films are hand-maintained in `src/data/films.ts` (id, label, title). Kris wants
 the Theater to pull the channel's most recent videos automatically, keep only

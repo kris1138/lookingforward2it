@@ -21,6 +21,10 @@ function tag(xml: string, name: string): string {
   return m ? decode(m[1]) : '';
 }
 
+function escapeRegExp(text: string): string {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 // Links, hashtags and product lists usually sit further down a YouTube
 // description, so only the opening paragraph is shown on the site.
 function firstParagraph(text: string): string {
@@ -42,7 +46,7 @@ async function load(): Promise<Film[]> {
   for (const [, entry] of xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)) {
     const title = tag(entry, 'title').trim();
     if (!title.toLowerCase().includes(keyword)) continue;
-    const number = new RegExp(`${FILM_TITLE_KEYWORD}\\s*(\\d+)`, 'i').exec(title)?.[1];
+    const number = new RegExp(`${escapeRegExp(FILM_TITLE_KEYWORD)}\\s*(\\d+)`, 'i').exec(title)?.[1];
     films.push({
       id: tag(entry, 'yt:videoId'),
       label: number ? `${FILM_TITLE_KEYWORD} ${number}` : FILM_TITLE_KEYWORD,

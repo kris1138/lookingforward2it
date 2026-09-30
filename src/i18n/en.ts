@@ -42,7 +42,7 @@ export const en: Copy = {
   ],
   story: {
     eyebrow: 'The story',
-    title: 'We bought a house we had never slept in.',
+    title: 'I bought a house I had never slept in.',
     paragraphs: [
       'I came to Monferrato to look at one house and left having agreed to buy another — a farmhouse in Sessame with a collapsed outbuilding, a well, and a hillside that had been left to itself for a decade.',
       'The first year was mostly removal: plaster off, floors up, brambles out. I learned which builders turn up and which ones do not. I learned the Italian for lime mortar. I slept in the one dry room through a winter and cooked on a camping ring for longer than I would like to admit.',
@@ -106,10 +106,10 @@ export const en: Copy = {
   },
   footer: {
     blurb:
-      "A farmhouse in Sessame, Asti — becoming a B&B, a writers' retreat, and a small farm. Slowly.",
+      "My Italian Adventure – A new home, a B&B and writers' retreat, and a small farm. Slowly.",
     visitHeading: 'Visit',
     findUsHeading: 'Find us',
     findUs: 'Sessame, Asti\nMonferrato, Piedmont\nItaly',
-    note: 'Looking forward, and looking back.',
+    note: 'Looking forward – My Italian Adventure',
   },
 };

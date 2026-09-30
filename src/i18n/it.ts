@@ -42,7 +42,7 @@ export const it: Copy = {
   ],
   story: {
     eyebrow: 'La storia',
-    title: 'Abbiamo comprato una casa in cui non avevamo mai dormito.',
+    title: 'Comprato una casa in cui non avevo mai dormito.',
     paragraphs: [
       "Sono venuta in Monferrato per vedere una casa e sono ripartita avendone comprata un'altra — una cascina a Sessame con un rustico crollato, un pozzo e una collina lasciata a se stessa per dieci anni.",
       "Il primo anno è stato soprattutto togliere: intonaco giù, pavimenti su, rovi fuori. Ho imparato quali muratori si presentano e quali no. Ho imparato a dire calce idraulica. Ho passato un inverno nell'unica stanza asciutta, cucinando su un fornello da campeggio più a lungo di quanto vorrei ammettere.",
@@ -106,10 +106,10 @@ export const it: Copy = {
   },
   footer: {
     blurb:
-      'Una cascina a Sessame, Asti — che diventerà un B&B, un ritiro per chi scrive e un piccolo podere. Lentamente.',
+      'La mia avventura italiana – Una nuova casa, un B&B e un rifugio per scrittori, e una piccola fattoria. A poco a poco.',
     visitHeading: 'Visita',
     findUsHeading: 'Dove siamo',
     findUs: 'Sessame, Asti\nMonferrato, Piemonte\nItalia',
-    note: 'Guardiamo avanti, e indietro.',
+    note: 'Looking forward – La mia avventura italiana',
   },
 };

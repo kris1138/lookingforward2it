@@ -86,8 +86,20 @@ React, loaded via inline `<script>` tags in the relevant layout/view:
 **`FilmTheater.tsx`'s `thumbLoaded` handler** works around YouTube
 silently 200-ing a 120×90 grey placeholder for missing thumbnail sizes
 (no error event fires) by checking decoded image width and stepping down
-`maxresdefault` → `hq720` → `mqdefault`. `src/data/films.ts` holds the
-films list (newest first — paste new entries at the top) and the
+`maxresdefault` → `hq720` → `mqdefault`.
+
+**Films are fetched from YouTube at build time**, not hand-listed.
+`src/data/youtube.ts` (`fetchChannelFilms()`, called in `HomeView.astro`'s
+frontmatter) reads the channel's public RSS feed (no API key), keeps videos
+whose title contains `FILM_TITLE_KEYWORD` (case-insensitive, set in
+`src/data/films.ts`), and uses YouTube's title plus the description's first
+paragraph. The label is taken from the number after the keyword in the
+title ("Episode 16"). The feed only lists the latest 15 uploads, so older
+episodes drop off as other videos are posted — the known trade-off for not
+needing a Google Cloud key. The build deliberately fails on a feed error or
+zero matches rather than shipping an empty Theater. The site is static, so
+new videos appear only after a rebuild — schedule one once hosting is
+decided. `films.ts` also holds the channel ID and the
 YouTube/Instagram/email constants used across pages.
 
 ## Other notes

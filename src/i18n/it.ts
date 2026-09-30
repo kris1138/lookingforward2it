@@ -63,7 +63,7 @@ export const it: Copy = {
     eyebrow: 'I video',
     title: 'Guarda i lavori',
     lead: 'Ogni poche settimane pubblico un video di quello che ho fatto davvero — le settimane buone e quelle andate storte.',
-    listLabel: 'Tutti i video',
+    listLabel: 'Ultimi episodi',
     foot: 'I video nuovi vengono aggiunti in cima a questa lista, man mano che li facciamo.',
   },
   stay: {

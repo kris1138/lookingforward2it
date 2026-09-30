@@ -4,6 +4,7 @@ interface Film {
   id: string;
   label: string;
   title: string;
+  description: string;
 }
 
 interface Props {
@@ -16,7 +17,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(false);
 
-  const current = films[Math.min(active, films.length - 1)] ?? { id: '', label: '', title: '' };
+  const current = films[Math.min(active, films.length - 1)] ?? { id: '', label: '', title: '', description: '' };
   const embedSrc = `https://www.youtube-nocookie.com/embed/${current.id}?autoplay=1&rel=0&modestbranding=1`;
   const activeThumb = `https://i.ytimg.com/vi/${current.id}/maxresdefault.jpg`;
 
@@ -72,6 +73,11 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
             {current.title}
           </h3>
         </div>
+        {current.description && (
+          <p className="mt-2.5 mb-0 max-w-[60ch] whitespace-pre-line font-body text-[15px] leading-[1.6] text-ombra">
+            {current.description}
+          </p>
+        )}
       </div>
 
       <div className="min-w-0 flex-[0.9_1_280px]">

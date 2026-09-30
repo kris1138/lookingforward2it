@@ -7,13 +7,15 @@ import FilmTheater from '../components/FilmTheater';
 import { Image } from 'astro:assets';
 import heroImage from '../assets/images/hero.jpg';
 import { getCopy, routePath, type Lang } from '../i18n/ui';
-import { films, YOUTUBE_SUBSCRIBE_URL } from '../data/films';
+import { YOUTUBE_SUBSCRIBE_URL } from '../data/films';
+import { fetchChannelFilms } from '../data/youtube';
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = getCopy(lang);
+const films = await fetchChannelFilms();
 ---
 
 <PageLayout lang={lang} routeKey="home" footerFlush>

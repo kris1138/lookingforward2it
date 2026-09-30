@@ -67,6 +67,11 @@ npm run preview   # preview the production build locally
 npm run check     # Astro's TypeScript check
 ```
 
+The Film Theater on Home is built from the YouTube channel's public feed
+(its latest 15 uploads), keeping videos whose title contains
+`FILM_TITLE_KEYWORD` in `src/data/films.ts`. New videos show up on the
+next build.
+
 Routes are locale-prefixed (`/en/…`, `/it/…`); `/` redirects to whichever
 language a returning visitor last used (or English, by default).
 

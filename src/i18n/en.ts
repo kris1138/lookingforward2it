@@ -63,7 +63,7 @@ export const en: Copy = {
     eyebrow: 'The films',
     title: 'Watch it happen',
     lead: 'Every few weeks I put up a film of what I have actually done — the good weeks and the ones that went sideways.',
-    listLabel: 'All films',
+    listLabel: 'Latest episodes',
     foot: 'New films are added to the top of this list as we make them.',
   },
   stay: {

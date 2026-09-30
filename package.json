@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:review": "BASE_PATH=/Shona/ astro build",
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro"
@@ -29,6 +30,7 @@
     "esbuild": true
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10"
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^22.20.4"
   }
 }

@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { localizedPaths, getCopy, type Lang, type RouteKey } from '../i18n/ui';
+import { localizedPaths, getCopy, withBase, type Lang, type RouteKey } from '../i18n/ui';
 import { SITE_URL } from '../config';
 
 interface Props {
@@ -15,7 +15,7 @@ const paths = localizedPaths(routeKey);
 const canonical = `${SITE_URL}${paths[lang]}`;
 const pageTitle = title ?? t.meta.title;
 const pageDescription = description ?? t.meta.description;
-const ogImage = `${SITE_URL}/images/hero.jpg`;
+const ogImage = `${SITE_URL}${withBase('/images/hero.jpg')}`;
 const ogLocale = lang === 'en' ? 'en_GB' : 'it_IT';
 const ogLocaleAlternate = lang === 'en' ? 'it_IT' : 'en_GB';
 ---
@@ -28,7 +28,7 @@ const ogLocaleAlternate = lang === 'en' ? 'it_IT' : 'en_GB';
 
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
 
     <link rel="alternate" hreflang="en" href={`${SITE_URL}${paths.en}`} />

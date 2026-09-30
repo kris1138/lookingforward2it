@@ -27,9 +27,19 @@ const routes: Record<RouteKey, Record<Lang, string>> = {
   contact: { en: 'contact', it: 'contatti' },
 };
 
+/**
+ * Prefixes a root-relative path with Astro's `base`, so links still resolve
+ * when the site is deployed into a sub-folder (e.g. a review copy under
+ * `/Shona/`). With the default base of `/` this is a no-op.
+ */
+export function withBase(path: string): string {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  return `${base}${path}`;
+}
+
 export function routePath(lang: Lang, key: RouteKey): string {
   const slug = routes[key][lang];
-  return slug ? `/${lang}/${slug}/` : `/${lang}/`;
+  return withBase(slug ? `/${lang}/${slug}/` : `/${lang}/`);
 }
 
 /** Given the current page's route key, returns the equivalent path in every locale. */

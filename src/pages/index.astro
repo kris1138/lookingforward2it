@@ -5,26 +5,28 @@
 // concern here the way there was with the old client-only toggle — the
 // only thing worth preserving is remembering a returning visitor's
 // preferred language.
+import { withBase } from '../i18n/ui';
+const base = withBase('/');
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=/en/" />
+    <meta http-equiv="refresh" content={`0; url=${base}en/`} />
     <title>Looking Forward</title>
   </head>
   <body>
-    <script>
+    <script is:inline define:vars={{ base }}>
       try {
         const stored = localStorage.getItem('lf-lang');
         const lang = stored === 'it' ? 'it' : 'en';
-        window.location.replace(`/${lang}/`);
+        window.location.replace(`${base}${lang}/`);
       } catch {
         // Safari private mode throws on localStorage access.
-        window.location.replace('/en/');
+        window.location.replace(`${base}en/`);
       }
     </script>
-    <p><a href="/en/">Continue in English</a> &middot; <a href="/it/">Continua in italiano</a></p>
+    <p><a href={`${base}en/`}>Continue in English</a> &middot; <a href={`${base}it/`}>Continua in italiano</a></p>
   </body>
 </html>

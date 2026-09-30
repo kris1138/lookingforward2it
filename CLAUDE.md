@@ -15,6 +15,7 @@ v4. Bilingual (English/Italian) via locale-prefixed routes.
 npm install
 npm run dev       # dev server
 npm run build     # static build to dist/
+npm run build:review  # same, but for the /Shona/ sub-folder review upload
 npm run preview   # preview the production build
 npm run check     # Astro's TypeScript check
 ```
@@ -40,6 +41,11 @@ copy dictionaries (see `types.ts` for the shape); add new UI copy to
 *both*. `ui.ts` exports `getCopy(lang)` and the translated-slug route map
 (`routePath`/`localizedPaths`) used by `Nav`/`LanguageSwitcher`/`Footer`
 to link between equivalent pages across locales.
+
+**Never hard-code root-absolute URLs** (`/en/`, `/images/...`). Review
+copies are deployed into a `/Shona/` sub-folder (`npm run build:review`
+sets Astro's `base` via `BASE_PATH`), so internal links and `public/`
+asset paths must go through `routePath()` or `withBase()` in `ui.ts`.
 
 **Head/OG metadata stays static HTML**, not JS-injected — link-preview
 scrapers (WhatsApp, iMessage, Slack) don't execute JavaScript. This is

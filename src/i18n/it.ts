@@ -2,7 +2,7 @@ import type { Copy } from './types';
 
 export const it: Copy = {
   meta: {
-    title: 'Looking Forward — la rinascita di una cascina nel Monferrato',
+    title: 'Looking Forward 2 It — la rinascita di una cascina nel Monferrato',
     description:
       "Ho lasciato la Scozia per una vecchia cascina sulle colline del Monferrato, in Piemonte. Diventerà un B&B, un ritiro per chi scrive e un piccolo orto — e potete guardarla nascere.",
   },
@@ -110,6 +110,6 @@ export const it: Copy = {
     visitHeading: 'Visita',
     findUsHeading: 'Dove siamo',
     findUs: 'Sessame, Asti\nMonferrato, Piemonte\nItalia',
-    note: 'Looking forward – La mia avventura italiana',
+    note: 'Looking Forward 2 It – La mia avventura italiana',
   },
 };

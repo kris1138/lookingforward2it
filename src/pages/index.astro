@@ -6,6 +6,7 @@
 // only thing worth preserving is remembering a returning visitor's
 // preferred language.
 import { withBase } from '../i18n/ui';
+import { SITE_NAME } from '../config';
 const base = withBase('/');
 ---
 
@@ -14,7 +15,7 @@ const base = withBase('/');
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="refresh" content={`0; url=${base}en/`} />
-    <title>Looking Forward</title>
+    <title>{SITE_NAME}</title>
   </head>
   <body>
     <script is:inline define:vars={{ base }}>

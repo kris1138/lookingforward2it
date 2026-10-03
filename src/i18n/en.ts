@@ -2,7 +2,7 @@ import type { Copy } from './types';
 
 export const en: Copy = {
   meta: {
-    title: 'Looking Forward — rebuilding a farmhouse in Monferrato',
+    title: 'Looking Forward 2 It — rebuilding a farmhouse in Monferrato',
     description:
       "I left Scotland for an old farmhouse in the Monferrato hills of Piedmont. It's becoming a B&B, a writers' retreat and a small produce farm — and you can watch it happen.",
   },
@@ -110,6 +110,6 @@ export const en: Copy = {
     visitHeading: 'Visit',
     findUsHeading: 'Find us',
     findUs: 'Sessame, Asti\nMonferrato, Piedmont\nItaly',
-    note: 'Looking forward – My Italian Adventure',
+    note: 'Looking Forward 2 It – My Italian Adventure',
   },
 };

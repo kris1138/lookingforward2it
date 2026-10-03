@@ -1,4 +1,5 @@
 import { useState, type SyntheticEvent } from 'react';
+import { SITE_NAME } from '../config';
 
 interface Film {
   id: string;
@@ -40,7 +41,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
           {playing ? (
             <iframe
               src={embedSrc}
-              title="Looking Forward film"
+              title={`${SITE_NAME} film`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 h-full w-full border-none"

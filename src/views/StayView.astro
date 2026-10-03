@@ -32,7 +32,7 @@ const t = getCopy(lang);
     {
       t.stay.rooms.map((room) => (
         <Card elevation="shadow">
-          <h3 class="mb-2.5 font-display text-h3 font-semibold italic leading-normal text-ombra-scura">
+          <h3 class="mb-2.5 font-display text-h3 font-semibold italic text-ombra-scura">
             {room.title}
           </h3>
           <p class="m-0 text-compact text-ombra">{room.body}</p>
@@ -45,7 +45,7 @@ const t = getCopy(lang);
     <div
       class="mx-auto flex max-w-content flex-wrap items-center justify-between gap-6 px-page-pad py-section"
     >
-      <p class="m-0 max-w-[32em] font-display text-[clamp(21px,2.8vw,26px)] italic text-ombra-scura">
+      <p class="m-0 max-w-[32em] font-display text-quote font-medium italic text-ombra-scura">
         {t.contact.lead}
       </p>
       <Button as="a" href={routePath(lang, 'contact')} variant="primary" size="lg">

@@ -31,7 +31,7 @@ const films = await fetchChannelFilms();
       >
         {t.hero.titleA} <em class="font-medium">{t.hero.titleEm}</em>{t.hero.titleB}
       </h1>
-      <p class="mb-8 max-w-[30em] text-lead leading-[1.65] text-ombra">
+      <p class="mb-8 max-w-[30em] text-lead text-ombra">
         {t.hero.lead}
       </p>
       <div class="flex flex-wrap items-center gap-4">
@@ -82,7 +82,7 @@ const films = await fetchChannelFilms();
     {
       t.cols.map((col) => (
         <div class="border-t border-muro-scuro pt-5">
-          <h3 class="mb-2.5 font-display text-h3 font-semibold italic leading-normal text-ombra-scura">
+          <h3 class="mb-2.5 font-display text-h3 font-semibold italic text-ombra-scura">
             {col.title}
           </h3>
           <p class="m-0 text-compact text-ombra [text-wrap:pretty]">{col.body}</p>
@@ -98,7 +98,7 @@ const films = await fetchChannelFilms();
     >
       {t.story.title}
     </h2>
-    <p class="mb-6 max-w-[34em] text-prose text-ombra [text-wrap:pretty]">
+    <p class="mb-6 max-w-measure-body text-prose text-ombra [text-wrap:pretty]">
       {t.story.paragraphs[0]}
     </p>
     <a href={routePath(lang, 'story')} class="font-body font-bold">
@@ -114,7 +114,7 @@ const films = await fetchChannelFilms();
           <h2 class="my-3 font-display text-h2 font-semibold text-ombra-scura">
             {t.films.title}
           </h2>
-          <p class="m-0 max-w-[40em] text-[clamp(16px,1.5vw,17px)] leading-[1.65] text-ombra">
+          <p class="m-0 max-w-measure-body text-prose text-ombra">
             {t.films.lead}
           </p>
         </div>
@@ -141,7 +141,7 @@ const films = await fetchChannelFilms();
       >
         {t.contact.title}
       </h2>
-      <p class="mb-8 max-w-[32em] text-prose text-muro/82 [text-wrap:pretty]">
+      <p class="mb-8 max-w-measure-body text-prose text-muro/82 [text-wrap:pretty]">
         {t.contact.lead}
       </p>
       <Button as="a" href={routePath(lang, 'contact')} variant="primary" size="lg">

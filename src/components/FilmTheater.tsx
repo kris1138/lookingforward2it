@@ -71,12 +71,12 @@ export default function FilmTheater({ films, listLabel, foot, playLabel, playerT
           <div className="whitespace-nowrap font-body text-xs font-bold uppercase tracking-label text-terra">
             {current.label}
           </div>
-          <h3 className="m-0 font-display text-h3 font-semibold italic leading-normal text-ombra-scura">
+          <h3 className="m-0 font-display text-h3 font-semibold italic text-ombra-scura">
             {current.title}
           </h3>
         </div>
         {current.description && (
-          <p className="mt-2.5 mb-0 max-w-[60ch] whitespace-pre-line font-body text-[15px] leading-[1.6] text-ombra">
+          <p className="mt-2.5 mb-0 max-w-[60ch] whitespace-pre-line font-body text-compact text-ombra">
             {current.description}
           </p>
         )}
@@ -121,7 +121,7 @@ export default function FilmTheater({ films, listLabel, foot, playLabel, playerT
             </button>
           ))}
         </div>
-        <p className="mt-4 font-body text-[13px] leading-[1.6] text-pietra">{foot}</p>
+        <p className="mt-4 font-body text-small text-pietra">{foot}</p>
       </div>
     </div>
   );

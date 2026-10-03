@@ -28,7 +28,7 @@ const addressLines = t.contact.address.split('\n');
       >
         {t.contact.title}
       </h1>
-      <p class="mb-8 max-w-[32em] text-prose text-ombra [text-wrap:pretty]">
+      <p class="mb-8 max-w-measure-body text-prose text-ombra [text-wrap:pretty]">
         {t.contact.lead}
       </p>
 
@@ -38,7 +38,7 @@ const addressLines = t.contact.address.split('\n');
           <p class="m-0 text-compact text-ombra">
             {addressLines.map((line, i) => <>{i > 0 && <br />}{line}</>)}
           </p>
-          <p class="mt-1.5 text-[13px] text-pietra">{t.contact.addressNote}</p>
+          <p class="mt-1.5 text-small text-pietra">{t.contact.addressNote}</p>
         </div>
         <div>
           <Eyebrow size="sm" class="mb-2">{t.contact.labelWatch}</Eyebrow>

@@ -35,7 +35,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
   }
 
   return (
-    <div className="flex flex-wrap items-start gap-[clamp(28px,3.5vw,40px)]">
+    <div className="flex flex-wrap items-start gap-gutter">
       <div className="min-w-0 flex-[1.55_1_420px]">
         <div className="relative aspect-video overflow-hidden rounded-soft bg-ombra-scura shadow-card">
           {playing ? (
@@ -107,7 +107,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
               </span>
               <span className="block min-w-0">
                 <span
-                  className={`mb-[3px] block font-body text-[11px] font-bold uppercase tracking-button ${
+                  className={`mb-1 block font-body text-[11px] font-bold uppercase tracking-button ${
                     i === active ? 'text-terra' : 'text-pietra'
                   }`}
                 >

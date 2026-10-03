@@ -15,7 +15,7 @@ const t = getCopy(lang);
 <PageLayout lang={lang} routeKey="story">
   <section
     data-reveal
-    class="mx-auto flex max-w-content flex-wrap items-start gap-[clamp(40px,6vw,80px)] px-[clamp(20px,4vw,48px)] py-[clamp(56px,8vw,96px)]"
+    class="mx-auto flex max-w-content flex-wrap items-start gap-[clamp(40px,6vw,80px)] px-page-pad py-section"
   >
     <div data-story-media class="sticky top-[110px] min-w-0 flex-[0.72_1_280px]">
       <div class="h-[clamp(300px,40vw,460px)] overflow-hidden rounded-soft bg-muro-scuro">
@@ -36,14 +36,14 @@ const t = getCopy(lang);
       </h1>
       {
         t.story.paragraphs.map((para) => (
-          <p class="mb-[22px] max-w-[34em] text-prose text-ombra [text-wrap:pretty]">
+          <p class="mb-6 max-w-[34em] text-prose text-ombra [text-wrap:pretty]">
             {para}
           </p>
         ))
       }
-      <div class="mt-[46px] border-t border-muro-scuro pt-[26px]">
+      <div class="mt-12 border-t border-muro-scuro pt-6">
         <Eyebrow>{t.now.eyebrow}</Eyebrow>
-        <div class="mt-[18px] grid gap-[18px]">
+        <div class="mt-4 grid gap-4">
           {
             t.now.rows.map((row) => (
               <div class="grid items-baseline gap-x-5 gap-y-2 [grid-template-columns:clamp(96px,22vw,150px)_minmax(0,1fr)]">

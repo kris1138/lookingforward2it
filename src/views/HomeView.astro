@@ -22,16 +22,16 @@ const films = await fetchChannelFilms();
   <section
     id="top"
     data-reveal
-    class="mx-auto flex max-w-content flex-wrap items-end gap-[clamp(36px,5vw,72px)] px-[clamp(20px,4vw,48px)] pt-[clamp(44px,7vw,88px)]"
+    class="mx-auto flex max-w-content flex-wrap items-end gap-[clamp(36px,5vw,72px)] px-page-pad pt-[clamp(44px,7vw,88px)]"
   >
     <div class="min-w-0 flex-[1.06_1_400px] pb-6">
       <Eyebrow>{t.hero.eyebrow}</Eyebrow>
       <h1
-        class="mb-[22px] mt-[18px] font-display text-display font-semibold tracking-snug text-ombra-scura"
+        class="mb-6 mt-4 font-display text-display font-semibold tracking-snug text-ombra-scura"
       >
         {t.hero.titleA} <em class="font-medium">{t.hero.titleEm}</em>{t.hero.titleB}
       </h1>
-      <p class="mb-[34px] max-w-[30em] text-lead leading-[1.65] text-ombra">
+      <p class="mb-8 max-w-[30em] text-lead leading-[1.65] text-ombra">
         {t.hero.lead}
       </p>
       <div class="flex flex-wrap items-center gap-4">
@@ -49,7 +49,7 @@ const films = await fetchChannelFilms();
           {t.hero.ctaWatch}
         </Button>
       </div>
-      <p class="mt-[22px] text-sm text-pietra">{t.hero.note}</p>
+      <p class="mt-6 text-sm text-pietra">{t.hero.note}</p>
     </div>
     <div
       class="h-[clamp(320px,46vw,520px)] min-w-0 flex-[0.84_1_300px] overflow-hidden rounded-arch bg-muro-scuro"
@@ -66,7 +66,7 @@ const films = await fetchChannelFilms();
     <Divider variant="dot" />
   </div>
 
-  <section data-reveal class="mx-auto max-w-[760px] px-[clamp(20px,4vw,48px)] text-center">
+  <section data-reveal class="mx-auto max-w-[760px] px-page-pad text-center">
     <Eyebrow>{t.intro.eyebrow}</Eyebrow>
     <p
       class="mt-4 font-display text-quote font-medium italic text-ombra-scura"
@@ -77,7 +77,7 @@ const films = await fetchChannelFilms();
 
   <section
     data-reveal
-    class="mx-auto mt-[clamp(56px,8vw,88px)] grid max-w-content gap-[clamp(30px,4vw,56px)] px-[clamp(20px,4vw,48px)] [grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))]"
+    class="mx-auto mt-section grid max-w-content gap-gutter px-page-pad [grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))]"
   >
     {
       t.cols.map((col) => (
@@ -91,7 +91,7 @@ const films = await fetchChannelFilms();
     }
   </section>
 
-  <section data-reveal class="mx-auto mt-[clamp(76px,11vw,128px)] max-w-content px-[clamp(20px,4vw,48px)]">
+  <section data-reveal class="mx-auto mt-section-lg max-w-content px-page-pad">
     <Eyebrow>{t.story.eyebrow}</Eyebrow>
     <h2
       class="mb-7 mt-3.5 max-w-[15em] font-display text-h2 font-semibold text-ombra-scura"
@@ -106,8 +106,8 @@ const films = await fetchChannelFilms();
     </a>
   </section>
 
-  <section id="films" data-reveal class="mt-32 border-y border-muro-scuro bg-muro-chiaro py-[clamp(64px,9vw,96px)]">
-    <div class="mx-auto max-w-content px-[clamp(20px,4vw,48px)]">
+  <section id="films" data-reveal class="mt-section-lg border-y border-muro-scuro bg-muro-chiaro py-section">
+    <div class="mx-auto max-w-content px-page-pad">
       <div class="mb-10 flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
         <div class="min-w-0 flex-[1_1_320px]">
           <Eyebrow>{t.films.eyebrow}</Eyebrow>
@@ -127,7 +127,7 @@ const films = await fetchChannelFilms();
   </section>
 
   <section data-reveal class="bg-ombra-scura text-muro [--focus-outline:var(--focus-ring)]">
-    <div class="mx-auto max-w-content px-[clamp(20px,4vw,48px)] py-[clamp(66px,9vw,104px)]">
+    <div class="mx-auto max-w-content px-page-pad py-section">
       <Eyebrow color="grano">{t.contact.eyebrow}</Eyebrow>
       <h2
         class="mb-5 mt-3.5 max-w-[12em] font-display text-h2 font-semibold text-muro"

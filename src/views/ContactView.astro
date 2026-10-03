@@ -19,7 +19,7 @@ const addressLines = t.contact.address.split('\n');
 <PageLayout lang={lang} routeKey="contact">
   <section
     data-reveal
-    class="mx-auto flex max-w-content flex-wrap items-start gap-[clamp(44px,6vw,80px)] px-[clamp(20px,4vw,48px)] py-[clamp(56px,8vw,96px)]"
+    class="mx-auto flex max-w-content flex-wrap items-start gap-[clamp(44px,6vw,80px)] px-page-pad py-section"
   >
     <div class="min-w-0 flex-[1_1_340px]">
       <Eyebrow>{t.contact.eyebrow}</Eyebrow>
@@ -32,7 +32,7 @@ const addressLines = t.contact.address.split('\n');
         {t.contact.lead}
       </p>
 
-      <div class="grid gap-[30px]">
+      <div class="grid gap-8">
         <div>
           <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
             {t.contact.labelWhere}
@@ -73,7 +73,7 @@ const addressLines = t.contact.address.split('\n');
           action={`mailto:${CONTACT_EMAIL}`}
           method="post"
           enctype="text/plain"
-          class="flex flex-col gap-[18px]"
+          class="flex flex-col gap-4"
         >
           <Input label={t.contact.form.name} name="name" required />
           <Input label={t.contact.form.email} name="email" type="email" required />

@@ -94,6 +94,9 @@
 
   /* Spacing */
   --spacing-section: var(--space-section);
+  --spacing-section-lg: var(--space-section-lg);
+  --spacing-page-pad: var(--page-pad);
+  --spacing-gutter: var(--gutter);
 
   /* Mirrors the design system's --bp-* tokens. Hard-coded because
      Tailwind needs literal values here to generate media queries, and

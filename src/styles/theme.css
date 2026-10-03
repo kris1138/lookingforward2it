@@ -49,11 +49,11 @@
   --text-display: var(--type-display);
   --text-display--line-height: var(--lh-display);
   --text-h1: var(--type-h1);
-  --text-h1--line-height: var(--lh-heading);
+  --text-h1--line-height: var(--lh-h1);
   --text-h2: var(--type-h2);
-  --text-h2--line-height: var(--lh-heading);
+  --text-h2--line-height: var(--lh-h2);
   --text-h3: var(--type-h3);
-  --text-h3--line-height: var(--lh-heading);
+  --text-h3--line-height: var(--lh-h3);
   /* named --text-body / --text-eyebrow would collide with colors.css's own
      semantic aliases of those exact names (text colors), so the font-size
      scale uses "prose"/"label" instead */
@@ -82,9 +82,9 @@
   /* Spacing */
   --spacing-section: var(--space-section);
 
-  /* No breakpoint tokens exist in the design system. These are chosen to
-     match the two real layout widths it does define (--content-max,
-     --measure-max) rather than left at Tailwind's generic defaults. */
+  /* Mirrors the design system's --bp-* tokens. Hard-coded because
+     Tailwind needs literal values here to generate media queries, and
+     CSS variables can't be used inside them. */
   --breakpoint-sm: 480px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;

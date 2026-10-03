@@ -1,5 +1,6 @@
-/* Looking Forward — Spacing, shape & motion
-   The brand breathes: generous whitespace, soft geometry, slow motion. */
+/* Looking Forward 2 It — Spacing, layout, shape, elevation & motion (v1.1)
+   The brand breathes: generous whitespace, editorial flex, soft geometry, slow motion.
+   Breakpoints: sm 480 · md 768 · lg 1024 · xl 1180 (CSS vars can't drive media queries). */
 :root {
   /* Spacing scale */
   --space-1: 4px;
@@ -11,25 +12,35 @@
   --space-7: 48px;
   --space-8: 64px;
   --space-9: 96px;
-  --space-section: clamp(64px, 10vw, 128px);
+  --space-section: clamp(56px, 8vw, 96px);
+  --space-section-lg: clamp(76px, 11vw, 128px);
 
   /* Layout */
   --content-max: 1180px;
-  --measure-max: 720px;
-  --gutter: 32px;
+  --page-pad: clamp(20px, 4vw, 48px);
+  --gutter: clamp(24px, 3vw, 32px); /* @kind spacing */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1180px;
 
   /* Shape */
-  --radius-soft: 8px;      /* cards, images, fields (6–10px) */
-  --radius-input: 6px;
+  --radius-soft: 8px;      /* cards, images, fields */
+  --radius-input: 6px;     /* fields, buttons, small thumbnails */
   --radius-pill: 999px;
-  --radius-arch: 999px 999px 0 0;  /* signature arch for hero images */
+  --radius-arch: 999px 999px 0 0;  /* signature arch — one hero/feature image per page */
 
-  /* Shadow — a single soft umber shadow; never combined with a border */
+  /* Elevation — never combined with a border */
   --shadow-card: 0 2px 12px rgba(125, 79, 53, 0.08);
   --shadow-lift: 0 8px 28px rgba(125, 79, 53, 0.12);
 
-  /* Motion — subtle and slow, fades and gentle rises only */
+  /* Motion — slow and subtle; movements ≤ 2px; only the play button scales (1.07×) */
   --ease-brand: cubic-bezier(0.25, 0.6, 0.3, 1);  /* @kind other */
   --duration-brand: 300ms;  /* @kind other */
   --duration-slow: 400ms;   /* @kind other */
+  --reveal-rise: 16px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }

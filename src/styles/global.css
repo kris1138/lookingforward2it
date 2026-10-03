@@ -69,7 +69,7 @@
   }
 
   ::selection {
-    background: rgba(212, 162, 87, 0.35);
+    background: var(--grano-glow);
   }
 
   /* Scroll-reveal base state, toggled by src/scripts/scroll-reveal.ts */

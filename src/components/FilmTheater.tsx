@@ -57,9 +57,9 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
                 onLoad={thumbLoaded}
                 alt=""
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[400ms] ease-brand"
+                className="absolute inset-0 h-full w-full object-cover"
               />
-              <span className="absolute inset-0 bg-gradient-to-t from-ombra-scura/55 via-ombra-scura/5 to-transparent" />
+              <span className="absolute inset-0 [background-image:var(--scrim)]" />
               <span className="absolute left-1/2 top-1/2 flex h-[84px] w-[84px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-pill bg-muro/92 transition-[transform,background-color] duration-brand ease-brand group-hover:scale-[1.07] group-hover:bg-terra group-focus-visible:scale-[1.07] group-focus-visible:bg-terra group-focus-visible:shadow-[0_0_0_9px_rgb(90_56_38/0.6)] group-focus-visible:outline-2 group-focus-visible:outline-offset-4 group-focus-visible:outline-muro">
                 <span className="ml-1.5 border-y-[13px] border-l-[20px] border-y-transparent border-l-ombra-scura" />
               </span>
@@ -97,7 +97,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
                 i === active ? 'bg-muro-scuro' : 'bg-transparent'
               }`}
             >
-              <span className="block aspect-video overflow-hidden rounded-[5px] bg-muro-scuro">
+              <span className="block aspect-video overflow-hidden rounded-input bg-muro-scuro">
                 <img
                   src={`https://i.ytimg.com/vi/${film.id}/mqdefault.jpg`}
                   alt=""

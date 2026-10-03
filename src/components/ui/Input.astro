@@ -27,7 +27,7 @@ const {
 const fieldId = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined);
 
 const fieldClasses = [
-  'w-full box-border rounded-input border border-muro-scuro bg-muro-chiaro px-[14px] py-3 font-body text-base text-ombra outline-none transition-[box-shadow,border-color] duration-brand ease-brand focus:border-grano focus:shadow-[0_0_0_3px_rgba(212,162,87,0.35)]',
+  'w-full box-border rounded-input border border-muro-scuro bg-muro-chiaro px-[14px] py-3 font-body text-base text-ombra outline-none transition-[box-shadow,border-color] duration-brand ease-brand focus:border-grano focus:shadow-[0_0_0_3px_var(--grano-glow)]',
   multiline ? 'resize-y' : '',
   className,
 ]

@@ -67,7 +67,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
           )}
         </div>
         <div className="mt-5 flex flex-wrap items-baseline gap-x-3.5 gap-y-1">
-          <div className="whitespace-nowrap font-body text-xs font-bold uppercase tracking-button text-terra">
+          <div className="whitespace-nowrap font-body text-xs font-bold uppercase tracking-label text-terra">
             {current.label}
           </div>
           <h3 className="m-0 font-display text-h3 font-semibold italic leading-normal text-ombra-scura">
@@ -82,7 +82,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
       </div>
 
       <div className="min-w-0 flex-[0.9_1_280px]">
-        <div className="mb-3.5 font-body text-xs font-bold uppercase tracking-label text-pietra">
+        <div className="mb-3.5 font-body text-xs font-bold uppercase tracking-eyebrow text-pietra">
           {listLabel}
         </div>
         <div className="grid max-h-[min(460px,70vh)] gap-1.5 overflow-y-auto pr-1">
@@ -107,7 +107,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
               </span>
               <span className="block min-w-0">
                 <span
-                  className={`mb-1 block font-body text-[11px] font-bold uppercase tracking-button ${
+                  className={`mb-1 block font-body text-[11px] font-bold uppercase tracking-label ${
                     i === active ? 'text-terra' : 'text-pietra'
                   }`}
                 >

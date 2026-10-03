@@ -75,8 +75,10 @@
   --text-label: var(--type-eyebrow);
   --text-tag: var(--type-tag);
 
-  --tracking-label: var(--ls-eyebrow);
+  --tracking-eyebrow: var(--ls-eyebrow);
+  --tracking-label: var(--ls-label);
   --tracking-button: var(--ls-button);
+  --tracking-tag: var(--ls-tag);
   --tracking-snug: var(--ls-tight);
 
   /* Shape */

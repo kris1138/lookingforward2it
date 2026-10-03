@@ -30,7 +30,7 @@ const items: { key: RouteKey | 'films'; label: string; href: string }[] = [
             href={item.href}
             aria-current={item.key === current ? 'page' : undefined}
             class:list={[
-              'font-body text-xs font-bold uppercase tracking-button text-ombra underline decoration-1 underline-offset-4 transition-colors duration-brand ease-brand',
+              'font-body text-xs font-bold uppercase tracking-label text-ombra underline decoration-1 underline-offset-4 transition-colors duration-brand ease-brand',
               item.key === current
                 ? 'decoration-ombra'
                 : 'decoration-transparent hover:text-ombra-scura hover:decoration-terra active:text-ombra-scura active:decoration-terra',

@@ -1,5 +1,6 @@
 ---
 import Wordmark from './Wordmark.astro';
+import Eyebrow from './ui/Eyebrow.astro';
 import { routePath, getCopy, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -30,9 +31,7 @@ const findUsLines = t.footer.findUs.split('\n');
       </p>
     </div>
     <div>
-      <div class="mb-3.5 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-grano">
-        {t.footer.visitHeading}
-      </div>
+      <Eyebrow color="grano" size="sm" class="mb-3.5">{t.footer.visitHeading}</Eyebrow>
       {
         visitLinks.map((link) => (
           <div class="mb-2.5">
@@ -44,9 +43,7 @@ const findUsLines = t.footer.findUs.split('\n');
       }
     </div>
     <div>
-      <div class="mb-3.5 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-grano">
-        {t.footer.findUsHeading}
-      </div>
+      <Eyebrow color="grano" size="sm" class="mb-3.5">{t.footer.findUsHeading}</Eyebrow>
       <p class="m-0 font-body text-small leading-[1.7] text-muro/85">
         {
           findUsLines.map((line, i) => (

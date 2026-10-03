@@ -1,10 +1,12 @@
 ---
 interface Props {
   color?: 'terra' | 'grano' | 'muro' | 'pietra';
+  /** sm = 11px (footer and contact labels), md = 12px; the design system allows 11–12px. */
+  size?: 'sm' | 'md';
   as?: 'div' | 'p' | 'span';
   class?: string;
 }
-const { color = 'terra', as: Tag = 'div', class: className } = Astro.props;
+const { color = 'terra', size = 'md', as: Tag = 'div', class: className } = Astro.props;
 
 const colors = {
   terra: 'text-terra',
@@ -13,8 +15,14 @@ const colors = {
   pietra: 'text-pietra',
 };
 
+const sizes = {
+  sm: 'text-[11px]',
+  md: 'text-label',
+};
+
 const classes = [
-  'm-0 font-body font-bold text-label uppercase tracking-label',
+  'm-0 font-body font-bold uppercase tracking-eyebrow',
+  sizes[size],
   colors[color],
   className,
 ]

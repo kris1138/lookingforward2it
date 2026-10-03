@@ -21,13 +21,13 @@ const langs: Lang[] = ['en', 'it'];
           lang={l}
           aria-current={l === lang ? 'true' : undefined}
           class:list={[
-            'inline-flex min-h-6 min-w-6 items-center justify-center px-1 font-body text-xs font-bold tracking-button text-ombra underline decoration-1 underline-offset-4 transition-colors duration-brand ease-brand',
+            'inline-flex min-h-6 min-w-6 items-center justify-center px-1 font-body text-xs font-bold uppercase tracking-label text-ombra underline decoration-1 underline-offset-4 transition-colors duration-brand ease-brand',
             l === lang
               ? 'decoration-ombra'
               : 'decoration-transparent hover:text-ombra-scura hover:decoration-terra active:text-ombra-scura active:decoration-terra',
           ]}
         >
-          {l.toUpperCase()}
+          {l}
         </a>
       </>
     ))

@@ -1,21 +1,29 @@
-/* Looking Forward — Colour
-   Five sun-faded colours named in Italian, rooted in the Monferrato landscape,
-   plus four derived tints. Never pure white, never pure black. */
+/* Looking Forward 2 It — Colour (v1.1)
+   Five sun-faded colours named in Italian, rooted in the Piedmont hills around
+   Sessame, plus derived tints. Never pure white, never pure black. */
 :root {
   /* Core palette */
   --muro: #F2E8D6;        /* old wall / linen — primary background */
-  --grano: #D4A257;       /* wheat gold — warm accent, links, underlines */
-  --terra: #C47A50;       /* terracotta — buttons, active states */
-  --salvia: #8A9B6E;      /* sage — nature/farm content, success */
-  --ombra: #7D4F35;       /* shadow / umber — primary text, borders */
+  --grano: #D4A257;       /* wheat gold — focus on dark, form focus, selection, small highlights */
+  --terra: #C47A50;       /* terracotta — buttons, eyebrows, link underline on hover, logo disc */
+  --salvia: #8A9B6E;      /* sage — tags, success, garden & farm content */
+  --ombra: #7D4F35;       /* shadow / umber — body text, borders, secondary outlines */
 
   /* Derived tints */
-  --muro-chiaro: #FDFAF5; /* lightest background, cards on Muro */
-  --muro-scuro: #E8DCC4;  /* subtle dividers, hover states on Muro */
-  --ombra-scura: #5A3826; /* dark headings, dark footers */
-  --pietra: #9A8A7A;      /* muted secondary text, captions, metadata */
+  --muro-chiaro: #FDFAF5; /* lightest background; cards & bands on Muro; text on Terra */
+  --muro-scuro: #E8DCC4;  /* hairlines, hover & active rows on Muro */
+  --ombra-scura: #5A3826; /* ALL headings, logo lettering, dark sections & footers */
+  --pietra: #9A8A7A;      /* muted text: captions, metadata, form labels */
+  --salvia-ink: #5F6E45;  /* text on Salvia-tinted tags */
 
-  /* Semantic aliases */
+  /* Tints & overlays */
+  --salvia-tint: rgba(138, 155, 110, 0.15);
+  --terra-tint: rgba(196, 122, 80, 0.14);
+  --grano-tint: rgba(212, 162, 87, 0.18);
+  --grano-glow: rgba(212, 162, 87, 0.35);   /* selection, form focus */
+  --scrim: linear-gradient(to top, rgba(90, 56, 38, 0.55), rgba(90, 56, 38, 0.05) 50%, transparent); /* @kind other */ /* the only allowed gradient: photo scrim */
+
+  /* Semantic aliases — prefer these in code */
   --bg-page: var(--muro);
   --bg-page-soft: var(--muro-chiaro);
   --bg-card: var(--muro-chiaro);
@@ -34,9 +42,8 @@
   --border-soft: var(--muro-scuro);
   --border-strong: var(--ombra);
 
-  /* Salvia tint used behind tags/pills */
-  --salvia-tint: rgba(138, 155, 110, 0.15);
-  --salvia-ink: #5F6E45;
-
-  --focus-ring: var(--grano);
+  --focus-outline: var(--ombra);  /* 2px outline on light */
+  --focus-ring: var(--grano);     /* on dark, and form fields */
 }
+
+::selection { background: var(--grano-glow); }

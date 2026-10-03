@@ -52,7 +52,7 @@ export const en: Copy = {
     teaserCta: 'Read the story',
   },
   now: {
-    eyebrow: 'Where we are now',
+    eyebrow: 'Where I am now',
     rows: [
       { when: 'Spring 2026', what: 'Roof finished on the west range; the first beds planted out.' },
       { when: 'Summer 2026', what: 'Replastering the ground floor, and the well back in use.' },
@@ -64,7 +64,7 @@ export const en: Copy = {
     title: 'Watch it happen',
     lead: 'Every few weeks I put up a film of what I have actually done — the good weeks and the ones that went sideways.',
     listLabel: 'Latest episodes',
-    foot: 'New films are added to the top of this list as we make them.',
+    foot: 'New films are added to the top of this list as I make them.',
   },
   stay: {
     eyebrow: 'Staying here',
@@ -88,7 +88,7 @@ export const en: Copy = {
   },
   contact: {
     eyebrow: 'Say hello',
-    title: 'Come and find us, eventually.',
+    title: 'Come and find me, eventually.',
     lead: 'I am not taking bookings yet. If you would like to know when I am, the films are the best place to follow along — or write to me and I will remember.',
     labelWhere: 'Where',
     labelWatch: 'Watch',
@@ -108,7 +108,7 @@ export const en: Copy = {
     blurb:
       "My Italian Adventure – A new home, a B&B and writers' retreat, and a small farm. Slowly.",
     visitHeading: 'Visit',
-    findUsHeading: 'Find us',
+    findUsHeading: 'Find me',
     findUs: 'Sessame, Asti\nPiedmont\nItaly',
     note: 'Looking Forward 2 It – My Italian Adventure',
   },

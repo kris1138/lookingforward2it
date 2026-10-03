@@ -52,7 +52,7 @@ export const it: Copy = {
     teaserCta: 'Leggi la storia',
   },
   now: {
-    eyebrow: 'A che punto siamo',
+    eyebrow: 'A che punto sono',
     rows: [
       { when: 'Primavera 2026', what: "Tetto finito sull'ala ovest; piantate le prime aiuole." },
       { when: 'Estate 2026', what: 'Nuovo intonaco al piano terra, e il pozzo di nuovo in uso.' },
@@ -64,7 +64,7 @@ export const it: Copy = {
     title: 'Guarda i lavori',
     lead: 'Ogni poche settimane pubblico un video di quello che ho fatto davvero — le settimane buone e quelle andate storte.',
     listLabel: 'Ultimi episodi',
-    foot: 'I video nuovi vengono aggiunti in cima a questa lista, man mano che li facciamo.',
+    foot: 'I video nuovi vengono aggiunti in cima a questa lista, man mano che li faccio.',
   },
   stay: {
     eyebrow: 'Il soggiorno',
@@ -87,8 +87,8 @@ export const it: Copy = {
     teaserLead: 'Stanze per gli ospiti e un ritiro per chi scrive sono in arrivo — ecco cosa è previsto.',
   },
   contact: {
-    eyebrow: 'Scrivici',
-    title: 'Venite a trovarci, prima o poi.',
+    eyebrow: 'Scrivimi',
+    title: 'Venite a trovarmi, prima o poi.',
     lead: 'Non prendo ancora prenotazioni. Se volete sapere quando lo farò, i video sono il modo migliore per seguirmi — oppure scrivetemi e me ne ricorderò.',
     labelWhere: 'Dove',
     labelWatch: 'Guarda',
@@ -96,7 +96,7 @@ export const it: Copy = {
     labelWrite: 'Scrivi',
     address: 'Sessame, Asti\nPiemonte, Italia',
     addressNote: 'Indirizzo completo a breve.',
-    teaserCta: 'Contattaci',
+    teaserCta: 'Contattami',
     form: {
       name: 'Nome',
       email: 'Email',
@@ -108,7 +108,7 @@ export const it: Copy = {
     blurb:
       'La mia avventura italiana – Una nuova casa, un B&B e un rifugio per scrittori, e una piccola fattoria. A poco a poco.',
     visitHeading: 'Visita',
-    findUsHeading: 'Dove siamo',
+    findUsHeading: 'Dove trovarmi',
     findUs: 'Sessame, Asti\nPiemonte\nItalia',
     note: 'Looking Forward 2 It – La mia avventura italiana',
   },

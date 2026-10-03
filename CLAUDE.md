@@ -4,8 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Marketing site for **Looking Forward** (lookingforward2.it) — a farmhouse
-renovation project in Sessame, Asti (Monferrato, Piedmont). Built with
+Marketing site for **Looking Forward 2 It** (lookingforward2.it) — a house
+renovation project in the hills above Sessame, south of Asti (Piedmont). Built with
 [Astro](https://astro.build), React islands, TypeScript, and Tailwind CSS
 v4. Bilingual (English/Italian) via locale-prefixed routes.
 

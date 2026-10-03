@@ -1,5 +1,6 @@
 ---
 import Wordmark from './Wordmark.astro';
+import Eyebrow from './ui/Eyebrow.astro';
 import { routePath, getCopy, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -19,9 +20,9 @@ const visitLinks = [
 const findUsLines = t.footer.findUs.split('\n');
 ---
 
-<footer class:list={[flush ? 'mt-px' : 'mt-24', 'bg-ombra-scura text-muro [--focus-outline:var(--focus-ring)]']}>
+<footer class:list={[flush ? 'mt-px' : 'mt-section', 'bg-ombra-scura text-muro [--focus-outline:var(--focus-ring)]']}>
   <div
-    class="mx-auto grid max-w-content gap-10 px-[clamp(20px,4vw,48px)] py-16 md:grid-cols-[1.4fr_1fr_1fr]"
+    class="mx-auto grid max-w-content gap-10 px-page-pad py-16 md:grid-cols-[1.4fr_1fr_1fr]"
   >
     <div>
       <Wordmark color="muro" size="lg" href={routePath(lang, 'home')} />
@@ -30,9 +31,7 @@ const findUsLines = t.footer.findUs.split('\n');
       </p>
     </div>
     <div>
-      <div class="mb-3.5 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-grano">
-        {t.footer.visitHeading}
-      </div>
+      <Eyebrow color="grano" size="sm" class="mb-3.5">{t.footer.visitHeading}</Eyebrow>
       {
         visitLinks.map((link) => (
           <div class="mb-2.5">
@@ -44,10 +43,8 @@ const findUsLines = t.footer.findUs.split('\n');
       }
     </div>
     <div>
-      <div class="mb-3.5 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-grano">
-        {t.footer.findUsHeading}
-      </div>
-      <p class="m-0 font-body text-sm leading-[1.7] text-muro/85">
+      <Eyebrow color="grano" size="sm" class="mb-3.5">{t.footer.findUsHeading}</Eyebrow>
+      <p class="m-0 font-body text-small leading-[1.7] text-muro/85">
         {
           findUsLines.map((line, i) => (
             <>
@@ -61,10 +58,10 @@ const findUsLines = t.footer.findUs.split('\n');
   </div>
   <div class="border-t border-muro/15">
     <div
-      class="mx-auto flex max-w-content flex-wrap justify-between gap-x-6 gap-y-2 px-[clamp(20px,4vw,48px)] py-[22px] font-body text-xs text-muro/70"
+      class="mx-auto flex max-w-content flex-wrap justify-between gap-x-6 gap-y-2 px-page-pad py-6 font-body text-xs text-muro/70"
     >
       <span>&copy; 2026 &middot; lookingforward2.it</span>
-      <span class="font-display text-[15px] italic text-muro/70">{t.footer.note}</span>
+      <span class="font-display text-footer-note italic text-muro/70">{t.footer.note}</span>
     </div>
   </div>
 </footer>

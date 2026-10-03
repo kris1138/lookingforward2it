@@ -19,49 +19,41 @@ const addressLines = t.contact.address.split('\n');
 <PageLayout lang={lang} routeKey="contact">
   <section
     data-reveal
-    class="mx-auto flex max-w-content flex-wrap items-start gap-[clamp(44px,6vw,80px)] px-[clamp(20px,4vw,48px)] py-[clamp(56px,8vw,96px)]"
+    class="mx-auto flex max-w-content flex-wrap items-start gap-[clamp(44px,6vw,80px)] px-page-pad py-section"
   >
     <div class="min-w-0 flex-[1_1_340px]">
       <Eyebrow>{t.contact.eyebrow}</Eyebrow>
       <h1
-        class="mb-5 mt-3.5 max-w-[12em] font-display text-[clamp(32px,5vw,44px)] font-semibold leading-[1.1] text-ombra-scura"
+        class="mb-5 mt-3.5 max-w-[12em] font-display text-h1 font-semibold text-ombra-scura"
       >
         {t.contact.title}
       </h1>
-      <p class="mb-8 max-w-[32em] text-[clamp(16.5px,1.6vw,18px)] leading-[1.7] text-ombra [text-wrap:pretty]">
+      <p class="mb-8 max-w-[32em] text-prose text-ombra [text-wrap:pretty]">
         {t.contact.lead}
       </p>
 
-      <div class="grid gap-[30px]">
+      <div class="grid gap-8">
         <div>
-          <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
-            {t.contact.labelWhere}
-          </div>
-          <p class="m-0 text-base leading-[1.7] text-ombra">
+          <Eyebrow size="sm" class="mb-2">{t.contact.labelWhere}</Eyebrow>
+          <p class="m-0 text-compact text-ombra">
             {addressLines.map((line, i) => <>{i > 0 && <br />}{line}</>)}
           </p>
           <p class="mt-1.5 text-[13px] text-pietra">{t.contact.addressNote}</p>
         </div>
         <div>
-          <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
-            {t.contact.labelWatch}
-          </div>
+          <Eyebrow size="sm" class="mb-2">{t.contact.labelWatch}</Eyebrow>
           <TextLink href={YOUTUBE_CHANNEL_URL} target="_blank" rel="noopener" class="text-base">
             youtube.com/@lookingforward2it
           </TextLink>
         </div>
         <div>
-          <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
-            {t.contact.labelFollow}
-          </div>
+          <Eyebrow size="sm" class="mb-2">{t.contact.labelFollow}</Eyebrow>
           <TextLink href={INSTAGRAM_URL} target="_blank" rel="noopener" class="text-base">
             instagram.com/lookingforward2.it
           </TextLink>
         </div>
         <div>
-          <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
-            {t.contact.labelWrite}
-          </div>
+          <Eyebrow size="sm" class="mb-2">{t.contact.labelWrite}</Eyebrow>
           <TextLink href={`mailto:${CONTACT_EMAIL}`} class="text-base">{CONTACT_EMAIL}</TextLink>
         </div>
       </div>
@@ -73,7 +65,7 @@ const addressLines = t.contact.address.split('\n');
           action={`mailto:${CONTACT_EMAIL}`}
           method="post"
           enctype="text/plain"
-          class="flex flex-col gap-[18px]"
+          class="flex flex-col gap-4"
         >
           <Input label={t.contact.form.name} name="name" required />
           <Input label={t.contact.form.email} name="email" type="email" required />

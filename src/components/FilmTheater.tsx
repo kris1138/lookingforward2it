@@ -11,9 +11,11 @@ interface Props {
   films: Film[];
   listLabel: string;
   foot: string;
+  playLabel: string;
+  playerTitle: string;
 }
 
-export default function FilmTheater({ films, listLabel, foot }: Props) {
+export default function FilmTheater({ films, listLabel, foot, playLabel, playerTitle }: Props) {
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -34,13 +36,13 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
   }
 
   return (
-    <div className="flex flex-wrap items-start gap-[clamp(28px,3.5vw,40px)]">
+    <div className="flex flex-wrap items-start gap-gutter">
       <div className="min-w-0 flex-[1.55_1_420px]">
         <div className="relative aspect-video overflow-hidden rounded-soft bg-ombra-scura shadow-card">
           {playing ? (
             <iframe
               src={embedSrc}
-              title="Looking Forward film"
+              title={playerTitle}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 h-full w-full border-none"
@@ -48,7 +50,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
           ) : (
             <button
               onClick={() => setPlaying(true)}
-              aria-label="Play"
+              aria-label={playLabel}
               className="group absolute inset-0 block h-full w-full cursor-pointer border-none bg-none p-0 focus-visible:outline-hidden"
             >
               <img
@@ -56,9 +58,9 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
                 onLoad={thumbLoaded}
                 alt=""
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[400ms] ease-brand"
+                className="absolute inset-0 h-full w-full object-cover"
               />
-              <span className="absolute inset-0 bg-gradient-to-t from-ombra-scura/55 via-ombra-scura/5 to-transparent" />
+              <span className="absolute inset-0 [background-image:var(--scrim)]" />
               <span className="absolute left-1/2 top-1/2 flex h-[84px] w-[84px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-pill bg-muro/92 transition-[transform,background-color] duration-brand ease-brand group-hover:scale-[1.07] group-hover:bg-terra group-focus-visible:scale-[1.07] group-focus-visible:bg-terra group-focus-visible:shadow-[0_0_0_9px_rgb(90_56_38/0.6)] group-focus-visible:outline-2 group-focus-visible:outline-offset-4 group-focus-visible:outline-muro">
                 <span className="ml-1.5 border-y-[13px] border-l-[20px] border-y-transparent border-l-ombra-scura" />
               </span>
@@ -66,10 +68,10 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
           )}
         </div>
         <div className="mt-5 flex flex-wrap items-baseline gap-x-3.5 gap-y-1">
-          <div className="whitespace-nowrap font-body text-xs font-bold uppercase tracking-button text-terra">
+          <div className="whitespace-nowrap font-body text-xs font-bold uppercase tracking-label text-terra">
             {current.label}
           </div>
-          <h3 className="m-0 font-display text-[clamp(21px,2.6vw,26px)] font-semibold italic text-ombra-scura">
+          <h3 className="m-0 font-display text-h3 font-semibold italic leading-normal text-ombra-scura">
             {current.title}
           </h3>
         </div>
@@ -81,7 +83,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
       </div>
 
       <div className="min-w-0 flex-[0.9_1_280px]">
-        <div className="mb-3.5 font-body text-xs font-bold uppercase tracking-label text-pietra">
+        <div className="mb-3.5 font-body text-xs font-bold uppercase tracking-eyebrow text-pietra">
           {listLabel}
         </div>
         <div className="grid max-h-[min(460px,70vh)] gap-1.5 overflow-y-auto pr-1">
@@ -96,7 +98,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
                 i === active ? 'bg-muro-scuro' : 'bg-transparent'
               }`}
             >
-              <span className="block aspect-video overflow-hidden rounded-[5px] bg-muro-scuro">
+              <span className="block aspect-video overflow-hidden rounded-input bg-muro-scuro">
                 <img
                   src={`https://i.ytimg.com/vi/${film.id}/mqdefault.jpg`}
                   alt=""
@@ -106,13 +108,13 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
               </span>
               <span className="block min-w-0">
                 <span
-                  className={`mb-[3px] block font-body text-[11px] font-bold uppercase tracking-button ${
+                  className={`mb-1 block font-body text-[11px] font-bold uppercase tracking-label ${
                     i === active ? 'text-terra' : 'text-pietra'
                   }`}
                 >
                   {film.label}
                 </span>
-                <span className="block font-display text-lg font-semibold italic leading-[1.25] text-ombra-scura">
+                <span className="block font-display text-list-title font-semibold italic text-ombra-scura">
                   {film.title}
                 </span>
               </span>

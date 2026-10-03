@@ -7,13 +7,13 @@ const { tone = 'salvia', class: className } = Astro.props;
 
 const tones = {
   salvia: 'bg-salvia-tint text-salvia-ink',
-  terra: 'bg-terra/14 text-ombra',
-  grano: 'bg-grano/18 text-ombra-scura',
+  terra: 'bg-terra-tint text-ombra',
+  grano: 'bg-grano-tint text-ombra-scura',
   neutral: 'bg-muro-scuro text-ombra',
 };
 
 const classes = [
-  'inline-flex items-center rounded-pill px-3 py-[5px] font-body font-bold text-[11px] uppercase tracking-[0.08em]',
+  'inline-flex items-center rounded-pill px-3 py-[5px] font-body font-bold text-tag uppercase tracking-tag',
   tones[tone],
   className,
 ]

@@ -2,6 +2,7 @@ export interface Copy {
   meta: {
     title: string;
     description: string;
+    ogImageAlt: string;
   };
   nav: {
     stay: string;
@@ -18,6 +19,7 @@ export interface Copy {
     ctaSubscribe: string;
     ctaWatch: string;
     note: string;
+    imageAlt: string;
   };
   intro: {
     eyebrow: string;
@@ -29,6 +31,7 @@ export interface Copy {
     title: string;
     paragraphs: string[];
     caption: string;
+    imageAlt: string;
     teaserCta: string;
   };
   now: {
@@ -41,6 +44,8 @@ export interface Copy {
     lead: string;
     listLabel: string;
     foot: string;
+    playLabel: string;
+    playerTitle: string;
   };
   stay: {
     eyebrow: string;

@@ -1,5 +1,4 @@
 import { useState, type SyntheticEvent } from 'react';
-import { SITE_NAME } from '../config';
 
 interface Film {
   id: string;
@@ -12,9 +11,11 @@ interface Props {
   films: Film[];
   listLabel: string;
   foot: string;
+  playLabel: string;
+  playerTitle: string;
 }
 
-export default function FilmTheater({ films, listLabel, foot }: Props) {
+export default function FilmTheater({ films, listLabel, foot, playLabel, playerTitle }: Props) {
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(false);
 
@@ -41,7 +42,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
           {playing ? (
             <iframe
               src={embedSrc}
-              title={`${SITE_NAME} film`}
+              title={playerTitle}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 h-full w-full border-none"
@@ -49,7 +50,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
           ) : (
             <button
               onClick={() => setPlaying(true)}
-              aria-label="Play"
+              aria-label={playLabel}
               className="group absolute inset-0 block h-full w-full cursor-pointer border-none bg-none p-0 focus-visible:outline-hidden"
             >
               <img

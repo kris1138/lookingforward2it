@@ -5,6 +5,7 @@ export const en: Copy = {
     title: 'Looking Forward 2 It — rebuilding a house in the hills above Sessame',
     description:
       "I left Scotland for a house in the hills above Sessame, south of Asti in Piedmont. It's becoming a B&B, a writers' retreat and a small produce farm — and you can watch it happen.",
+    ogImageAlt: 'The hills above Sessame in low evening light.',
   },
   nav: {
     stay: 'Stay',
@@ -21,6 +22,7 @@ export const en: Copy = {
     ctaSubscribe: 'Subscribe on YouTube',
     ctaWatch: 'Watch the films',
     note: 'A new film every few weeks.',
+    imageAlt: 'The house at golden hour',
   },
   intro: {
     eyebrow: 'What this is',
@@ -49,6 +51,7 @@ export const en: Copy = {
       'It is not finished. It may never be finished. That turns out to be the point.',
     ],
     caption: 'The house as it welcomed me, mid-2026.',
+    imageAlt: 'The house mid-renovation',
     teaserCta: 'Read the story',
   },
   now: {
@@ -65,6 +68,8 @@ export const en: Copy = {
     lead: 'Every few weeks I put up a film of what I have actually done — the good weeks and the ones that went sideways.',
     listLabel: 'Latest episodes',
     foot: 'New films are added to the top of this list as I make them.',
+    playLabel: 'Play',
+    playerTitle: 'Looking Forward 2 It film',
   },
   stay: {
     eyebrow: 'Staying here',

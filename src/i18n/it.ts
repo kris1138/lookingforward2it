@@ -5,6 +5,7 @@ export const it: Copy = {
     title: 'Looking Forward 2 It — la rinascita di una casa sulle colline sopra Sessame',
     description:
       "Ho lasciato la Scozia per una casa sulle colline sopra Sessame, a sud di Asti, in Piemonte. Diventerà un B&B, un ritiro per chi scrive e un piccolo orto — e potete guardarla nascere.",
+    ogImageAlt: 'Le colline sopra Sessame nella luce della sera.',
   },
   nav: {
     stay: 'Soggiorno',
@@ -21,6 +22,7 @@ export const it: Copy = {
     ctaSubscribe: 'Iscriviti su YouTube',
     ctaWatch: 'Guarda i video',
     note: 'Un video nuovo ogni poche settimane.',
+    imageAlt: 'La casa nella luce dorata del tramonto',
   },
   intro: {
     eyebrow: "Che cos'è",
@@ -49,6 +51,7 @@ export const it: Copy = {
       'Non è finita. Forse non lo sarà mai. Alla fine è proprio questo il punto.',
     ],
     caption: 'La casa come mi ha accolta, a metà 2026.',
+    imageAlt: 'La casa a metà ristrutturazione',
     teaserCta: 'Leggi la storia',
   },
   now: {
@@ -65,6 +68,8 @@ export const it: Copy = {
     lead: 'Ogni poche settimane pubblico un video di quello che ho fatto davvero — le settimane buone e quelle andate storte.',
     listLabel: 'Ultimi episodi',
     foot: 'I video nuovi vengono aggiunti in cima a questa lista, man mano che li faccio.',
+    playLabel: 'Riproduci',
+    playerTitle: 'Video di Looking Forward 2 It',
   },
   stay: {
     eyebrow: 'Il soggiorno',

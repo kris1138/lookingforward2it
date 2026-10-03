@@ -57,10 +57,23 @@
   /* named --text-body / --text-eyebrow would collide with colors.css's own
      semantic aliases of those exact names (text colors), so the font-size
      scale uses "prose"/"label" instead */
+  --text-list-title: var(--type-list-title);
+  --text-list-title--line-height: var(--lh-list-title);
+  --text-quote: var(--type-quote);
+  --text-quote--line-height: var(--lh-quote);
+  --text-lead: var(--type-lead);
+  --text-lead--line-height: var(--lh-body);
   --text-prose: var(--type-body);
   --text-prose--line-height: var(--lh-body);
+  --text-compact: var(--type-body-compact);
+  --text-compact--line-height: var(--lh-body);
   --text-small: var(--type-small);
+  --text-small--line-height: var(--lh-small);
+  --text-fine: var(--type-fine);
+  --text-fine--line-height: var(--lh-small);
+  --text-footer-note: var(--type-footer-note);
   --text-label: var(--type-eyebrow);
+  --text-tag: var(--type-tag);
 
   --tracking-label: var(--ls-eyebrow);
   --tracking-button: var(--ls-button);
@@ -97,4 +110,9 @@
 
 @utility max-w-measure {
   max-width: var(--measure-max);
+}
+
+/* Paragraph measure (30–40em per the design system). */
+@utility max-w-measure-body {
+  max-width: var(--measure-body);
 }

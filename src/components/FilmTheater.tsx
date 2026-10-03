@@ -70,7 +70,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
           <div className="whitespace-nowrap font-body text-xs font-bold uppercase tracking-button text-terra">
             {current.label}
           </div>
-          <h3 className="m-0 font-display text-[clamp(21px,2.6vw,26px)] font-semibold italic text-ombra-scura">
+          <h3 className="m-0 font-display text-h3 font-semibold italic leading-normal text-ombra-scura">
             {current.title}
           </h3>
         </div>
@@ -113,7 +113,7 @@ export default function FilmTheater({ films, listLabel, foot }: Props) {
                 >
                   {film.label}
                 </span>
-                <span className="block font-display text-lg font-semibold italic leading-[1.25] text-ombra-scura">
+                <span className="block font-display text-list-title font-semibold italic text-ombra-scura">
                   {film.title}
                 </span>
               </span>

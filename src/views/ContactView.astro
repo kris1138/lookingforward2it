@@ -24,11 +24,11 @@ const addressLines = t.contact.address.split('\n');
     <div class="min-w-0 flex-[1_1_340px]">
       <Eyebrow>{t.contact.eyebrow}</Eyebrow>
       <h1
-        class="mb-5 mt-3.5 max-w-[12em] font-display text-[clamp(32px,5vw,44px)] font-semibold leading-[1.1] text-ombra-scura"
+        class="mb-5 mt-3.5 max-w-[12em] font-display text-h1 font-semibold text-ombra-scura"
       >
         {t.contact.title}
       </h1>
-      <p class="mb-8 max-w-[32em] text-[clamp(16.5px,1.6vw,18px)] leading-[1.7] text-ombra [text-wrap:pretty]">
+      <p class="mb-8 max-w-[32em] text-prose text-ombra [text-wrap:pretty]">
         {t.contact.lead}
       </p>
 
@@ -37,7 +37,7 @@ const addressLines = t.contact.address.split('\n');
           <div class="mb-2 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-terra">
             {t.contact.labelWhere}
           </div>
-          <p class="m-0 text-base leading-[1.7] text-ombra">
+          <p class="m-0 text-compact text-ombra">
             {addressLines.map((line, i) => <>{i > 0 && <br />}{line}</>)}
           </p>
           <p class="mt-1.5 text-[13px] text-pietra">{t.contact.addressNote}</p>

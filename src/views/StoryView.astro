@@ -30,13 +30,13 @@ const t = getCopy(lang);
     <div class="min-w-0 flex-[1_1_380px]">
       <Eyebrow>{t.story.eyebrow}</Eyebrow>
       <h1
-        class="mb-7 mt-3.5 max-w-[15em] font-display text-[clamp(29px,4.6vw,44px)] font-semibold leading-[1.12] text-ombra-scura"
+        class="mb-7 mt-3.5 max-w-[15em] font-display text-h1 font-semibold text-ombra-scura"
       >
         {t.story.title}
       </h1>
       {
         t.story.paragraphs.map((para) => (
-          <p class="mb-[22px] max-w-[34em] text-[clamp(16.5px,1.6vw,18px)] leading-[1.7] text-ombra [text-wrap:pretty]">
+          <p class="mb-[22px] max-w-[34em] text-prose text-ombra [text-wrap:pretty]">
             {para}
           </p>
         ))

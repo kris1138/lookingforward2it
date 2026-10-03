@@ -47,7 +47,7 @@ const findUsLines = t.footer.findUs.split('\n');
       <div class="mb-3.5 font-body text-[11px] font-bold uppercase tracking-[0.12em] text-grano">
         {t.footer.findUsHeading}
       </div>
-      <p class="m-0 font-body text-sm leading-[1.7] text-muro/85">
+      <p class="m-0 font-body text-small leading-[1.7] text-muro/85">
         {
           findUsLines.map((line, i) => (
             <>
@@ -64,7 +64,7 @@ const findUsLines = t.footer.findUs.split('\n');
       class="mx-auto flex max-w-content flex-wrap justify-between gap-x-6 gap-y-2 px-[clamp(20px,4vw,48px)] py-[22px] font-body text-xs text-muro/70"
     >
       <span>&copy; 2026 &middot; lookingforward2.it</span>
-      <span class="font-display text-[15px] italic text-muro/70">{t.footer.note}</span>
+      <span class="font-display text-footer-note italic text-muro/70">{t.footer.note}</span>
     </div>
   </div>
 </footer>

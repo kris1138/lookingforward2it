@@ -16,11 +16,11 @@ const t = getCopy(lang);
   <section data-reveal class="mx-auto max-w-content px-[clamp(20px,4vw,48px)] py-[clamp(56px,8vw,96px)]">
     <Eyebrow>{t.stay.eyebrow}</Eyebrow>
     <h1
-      class="mb-4 mt-3.5 max-w-[16em] font-display text-[clamp(32px,5vw,52px)] font-semibold leading-[1.1] text-ombra-scura"
+      class="mb-4 mt-3.5 max-w-[16em] font-display text-h1 font-semibold text-ombra-scura"
     >
       {t.stay.title}
     </h1>
-    <p class="max-w-[38em] text-[clamp(16.5px,1.6vw,18px)] leading-[1.7] text-ombra [text-wrap:pretty]">
+    <p class="max-w-measure-body text-prose text-ombra [text-wrap:pretty]">
       {t.stay.lead}
     </p>
   </section>
@@ -32,10 +32,10 @@ const t = getCopy(lang);
     {
       t.stay.rooms.map((room) => (
         <Card elevation="shadow">
-          <h3 class="mb-2.5 font-display text-[23px] font-semibold italic text-ombra-scura">
+          <h3 class="mb-2.5 font-display text-h3 font-semibold italic leading-normal text-ombra-scura">
             {room.title}
           </h3>
-          <p class="m-0 text-base leading-[1.7] text-ombra">{room.body}</p>
+          <p class="m-0 text-compact text-ombra">{room.body}</p>
         </Card>
       ))
     }

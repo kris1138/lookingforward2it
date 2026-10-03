@@ -2,9 +2,9 @@ import type { Copy } from './types';
 
 export const en: Copy = {
   meta: {
-    title: 'Looking Forward 2 It — rebuilding a farmhouse in Monferrato',
+    title: 'Looking Forward 2 It — rebuilding a house in the hills above Sessame',
     description:
-      "I left Scotland for an old farmhouse in the Monferrato hills of Piedmont. It's becoming a B&B, a writers' retreat and a small produce farm — and you can watch it happen.",
+      "I left Scotland for a house in the hills above Sessame, south of Asti in Piedmont. It's becoming a B&B, a writers' retreat and a small produce farm — and you can watch it happen.",
   },
   nav: {
     stay: 'Stay',
@@ -17,7 +17,7 @@ export const en: Copy = {
     titleA: 'A house being rebuilt,',
     titleEm: 'slowly',
     titleB: ' and by hand.',
-    lead: "I left Scotland for an old farmhouse in the Monferrato hills. It's becoming a B&B, a writers' retreat and a small produce farm. It isn't finished, and there's no date yet — you can watch it happen.",
+    lead: "I left Scotland for a house in the hills above Sessame. It's becoming a B&B, a writers' retreat and a small produce farm. It isn't finished, and there's no date yet — you can watch it happen.",
     ctaSubscribe: 'Subscribe on YouTube',
     ctaWatch: 'Watch the films',
     note: 'A new film every few weeks.',
@@ -44,7 +44,7 @@ export const en: Copy = {
     eyebrow: 'The story',
     title: 'I bought a house I had never slept in.',
     paragraphs: [
-      'I came to Monferrato to look at one house and left having agreed to buy another — a farmhouse in Sessame with a collapsed outbuilding, a well, and a hillside that had been left to itself for a decade.',
+      'I came to Piedmont to look at one house and left having agreed to buy another — one in the hills above Sessame, with a collapsed outbuilding, a well, and a hillside that had been left to itself for a decade.',
       'The first year was mostly removal: plaster off, floors up, brambles out. I learned which builders turn up and which ones do not. I learned the Italian for lime mortar. I slept in the one dry room through a winter and cooked on a camping ring for longer than I would like to admit.',
       'It is not finished. It may never be finished. That turns out to be the point.',
     ],
@@ -69,11 +69,11 @@ export const en: Copy = {
   stay: {
     eyebrow: 'Staying here',
     title: "Not open yet — but here's what's coming.",
-    lead: "The farmhouse will eventually offer a small number of guest rooms and a writers' retreat. Nothing is bookable yet — this page is a placeholder for what's planned, not a finished offer.",
+    lead: "The house will eventually offer a small number of guest rooms and a writers' retreat. Nothing is bookable yet — this page is a placeholder for what's planned, not a finished offer.",
     rooms: [
       {
         title: 'Guest rooms',
-        body: 'Two simple rooms in the main house, built around the original stone walls and the farmhouse rhythm — early mornings, long tables, quiet evenings.',
+        body: 'Two simple rooms in the main house, built around the original stone walls and the rhythm of the countryside — early mornings, long tables, quiet evenings.',
       },
       {
         title: "The writers' retreat",
@@ -94,7 +94,7 @@ export const en: Copy = {
     labelWatch: 'Watch',
     labelFollow: 'Follow',
     labelWrite: 'Write',
-    address: 'Sessame, Asti\nMonferrato, Piedmont, Italy',
+    address: 'Sessame, Asti\nPiedmont, Italy',
     addressNote: 'Full address to follow.',
     teaserCta: 'Get in touch',
     form: {
@@ -109,7 +109,7 @@ export const en: Copy = {
       "My Italian Adventure – A new home, a B&B and writers' retreat, and a small farm. Slowly.",
     visitHeading: 'Visit',
     findUsHeading: 'Find us',
-    findUs: 'Sessame, Asti\nMonferrato, Piedmont\nItaly',
+    findUs: 'Sessame, Asti\nPiedmont\nItaly',
     note: 'Looking Forward 2 It – My Italian Adventure',
   },
 };

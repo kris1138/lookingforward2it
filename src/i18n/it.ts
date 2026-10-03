@@ -2,9 +2,9 @@ import type { Copy } from './types';
 
 export const it: Copy = {
   meta: {
-    title: 'Looking Forward 2 It — la rinascita di una cascina nel Monferrato',
+    title: 'Looking Forward 2 It — la rinascita di una casa sulle colline sopra Sessame',
     description:
-      "Ho lasciato la Scozia per una vecchia cascina sulle colline del Monferrato, in Piemonte. Diventerà un B&B, un ritiro per chi scrive e un piccolo orto — e potete guardarla nascere.",
+      "Ho lasciato la Scozia per una casa sulle colline sopra Sessame, a sud di Asti, in Piemonte. Diventerà un B&B, un ritiro per chi scrive e un piccolo orto — e potete guardarla nascere.",
   },
   nav: {
     stay: 'Soggiorno',
@@ -17,7 +17,7 @@ export const it: Copy = {
     titleA: 'Una casa che rinasce,',
     titleEm: 'lentamente',
     titleB: ', a mano.',
-    lead: "Ho lasciato la Scozia per una vecchia cascina sulle colline del Monferrato. Diventerà un B&B, un ritiro per chi scrive e un piccolo orto. Non è finita, e non c'è ancora una data — potete guardarla nascere.",
+    lead: "Ho lasciato la Scozia per una casa sulle colline sopra Sessame. Diventerà un B&B, un ritiro per chi scrive e un piccolo orto. Non è finita, e non c'è ancora una data — potete guardarla nascere.",
     ctaSubscribe: 'Iscriviti su YouTube',
     ctaWatch: 'Guarda i video',
     note: 'Un video nuovo ogni poche settimane.',
@@ -44,7 +44,7 @@ export const it: Copy = {
     eyebrow: 'La storia',
     title: 'Comprato una casa in cui non avevo mai dormito.',
     paragraphs: [
-      "Sono venuta in Monferrato per vedere una casa e sono ripartita avendone comprata un'altra — una cascina a Sessame con un rustico crollato, un pozzo e una collina lasciata a se stessa per dieci anni.",
+      "Sono venuta in Piemonte per vedere una casa e sono ripartita avendone comprata un'altra — sulle colline sopra Sessame, con un rustico crollato, un pozzo e una collina lasciata a se stessa per dieci anni.",
       "Il primo anno è stato soprattutto togliere: intonaco giù, pavimenti su, rovi fuori. Ho imparato quali muratori si presentano e quali no. Ho imparato a dire calce idraulica. Ho passato un inverno nell'unica stanza asciutta, cucinando su un fornello da campeggio più a lungo di quanto vorrei ammettere.",
       'Non è finita. Forse non lo sarà mai. Alla fine è proprio questo il punto.',
     ],
@@ -69,18 +69,18 @@ export const it: Copy = {
   stay: {
     eyebrow: 'Il soggiorno',
     title: 'Non ancora aperto — ma ecco cosa sta arrivando.',
-    lead: 'La cascina offrirà, col tempo, un piccolo numero di stanze per gli ospiti e un ritiro per chi scrive. Non è ancora possibile prenotare — questa pagina è un segnaposto per ciò che è previsto, non un’offerta definitiva.',
+    lead: 'La casa offrirà, col tempo, un piccolo numero di stanze per gli ospiti e un ritiro per chi scrive. Non è ancora possibile prenotare — questa pagina è un segnaposto per ciò che è previsto, non un’offerta definitiva.',
     rooms: [
       {
         title: 'Le stanze',
-        body: 'Due stanze semplici nella casa padronale, costruite intorno ai muri di pietra originali e al ritmo della cascina — mattine presto, tavoli lunghi, sere silenziose.',
+        body: 'Due stanze semplici nella casa padronale, costruite intorno ai muri di pietra originali e al ritmo della campagna — mattine presto, tavoli lunghi, sere silenziose.',
       },
       {
         title: 'Il ritiro per chi scrive',
         body: 'Uno spazio silenzioso riservato a chi ha bisogno di un posto per lavorare indisturbato, con un tavolo lungo e mattine lente comprese.',
       },
       {
-        title: 'La tavola della cascina',
+        title: 'La tavola della fattoria',
         body: "Pasti che nascono, quando possibile, dall'orto — ortaggi e frutta coltivati a trenta metri dalla porta della cucina, secondo stagione.",
       },
     ],
@@ -94,7 +94,7 @@ export const it: Copy = {
     labelWatch: 'Guarda',
     labelFollow: 'Segui',
     labelWrite: 'Scrivi',
-    address: 'Sessame, Asti\nMonferrato, Piemonte, Italia',
+    address: 'Sessame, Asti\nPiemonte, Italia',
     addressNote: 'Indirizzo completo a breve.',
     teaserCta: 'Contattaci',
     form: {
@@ -109,7 +109,7 @@ export const it: Copy = {
       'La mia avventura italiana – Una nuova casa, un B&B e un rifugio per scrittori, e una piccola fattoria. A poco a poco.',
     visitHeading: 'Visita',
     findUsHeading: 'Dove siamo',
-    findUs: 'Sessame, Asti\nMonferrato, Piemonte\nItalia',
+    findUs: 'Sessame, Asti\nPiemonte\nItalia',
     note: 'Looking Forward 2 It – La mia avventura italiana',
   },
 };

@@ -22,7 +22,7 @@ const items: { key: RouteKey | 'films'; label: string; href: string }[] = [
   <div
     class="mx-auto flex max-w-content flex-wrap items-center justify-between gap-x-6 gap-y-2.5 px-page-pad py-[clamp(11px,2.2vw,18px)]"
   >
-    <Wordmark href={routePath(lang, 'home')} />
+    <Wordmark href={routePath(lang, 'home')} loading="eager" />
     <nav class="flex flex-wrap items-center gap-x-[clamp(14px,2.8vw,34px)] gap-y-2">
       {
         items.map((item) => (

@@ -1,23 +1,24 @@
 ---
+import { Image } from 'astro:assets';
+import logoDefault from '../assets/logo-default.svg';
+import logoInverted from '../assets/logo-inverted.svg';
+
 interface Props {
-  color?: 'ombra' | 'muro';
+  /** `default` for light (Muro) backgrounds, `inverted` for dark (Ombra Scura) ones. */
+  variant?: 'default' | 'inverted';
   size?: 'md' | 'lg';
-  href?: string;
+  href: string;
+  /** Pass `eager` when the logo is above the fold (the header). */
+  loading?: 'eager' | 'lazy';
   class?: string;
 }
-const { color = 'ombra', size = 'md', href = '/', class: className } = Astro.props;
+const { variant = 'default', size = 'md', href, loading = 'lazy', class: className } = Astro.props;
 
-const colors = { ombra: 'text-ombra', muro: 'text-muro' };
-const sizes = { md: 'text-[26px]', lg: 'text-[30px]' };
-
-const classes = [
-  'font-display italic font-semibold leading-none no-underline',
-  colors[color],
-  sizes[size],
-  className,
-]
-  .filter(Boolean)
-  .join(' ');
+const logos = { default: logoDefault, inverted: logoInverted };
+// Width-driven (28px / 34px tall at 400×53) so max-w-full can shrink it without distorting.
+const sizes = { md: 'w-[211px]', lg: 'w-[257px]' };
 ---
 
-<a href={href} class={classes}>Looking&nbsp;Forward&nbsp;2&nbsp;It</a>
+<a href={href} class:list={['inline-block shrink leading-none no-underline', className]}>
+  <Image src={logos[variant]} alt="Looking Forward 2 It" loading={loading} class:list={['block h-auto max-w-full', sizes[size]]} />
+</a>

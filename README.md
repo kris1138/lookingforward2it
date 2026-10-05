@@ -63,9 +63,14 @@ render-blocking cross-origin request.
 npm install
 npm run dev       # start the dev server
 npm run build     # build the static site to dist/
+npm run build:review  # build for the /Shona/ review folder on the preview server
 npm run preview   # preview the production build locally
 npm run check     # Astro's TypeScript check
 ```
+
+For the preview server, use `npm run build:review`, not `npm run build`. It
+sets Astro's `base` to `/Shona/` so links and assets resolve inside that
+sub-folder. Upload the contents of `dist/` into `/Shona/` on the server.
 
 The Film Theater on Home is built from the YouTube channel's public feed
 (its latest 15 uploads), keeping videos whose title contains
